@@ -1,0 +1,5 @@
+UPDATE oxcontents SET
+    OXCONTENT='<div>\r\n<p> <span style=\"color: #ff0000;\"><strong>Hinweis:</strong></span> Derzeit ist keine Liefermethode für dieses Land bekannt. Bitte Liefermöglichkeiten suchen und den Besteller unter Angabe der <strong>Lieferkosten</strong> informieren!\r\n&nbsp;</p> </div>\r\n<div>Folgende Artikel wurden soeben unter [{ $shop->oxshops__oxname->value }] bestellt:<br>\r\n<br>\r\n</div>',
+    OXCONTENT_1='<p> <span style=\"color: #ff0000\"><strong>Information:</strong></span> Currently, there is no shipping method defined for this country. Please find a delivery option and inform the customer about the <strong>shipping costs</strong>.</p>\r\n<p>The following products have been ordered on [{ $shop->oxshops__oxname->value }]:<br />\r\n<br /></p>'
+    WHERE OXLOADID='oxadminordernpemail' AND OXSHOPID='oxbaseshop'
+    ;
