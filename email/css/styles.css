@@ -81,14 +81,15 @@ a {
 /* -------------------------------------
     FOOTER
 ------------------------------------- */
-table.footer-wrap {
+.footer-wrap {
+  margin-top: 10px;
   width: 100%;
   clear: both !important;
 }
-table.footer-wrap a {
+.footer-wrap a {
   color: #999;
 }
-table.footer-wrap .container p {
+.footer-wrap .container p {
   font-size: 12px;
   color: #666;
 }
@@ -123,14 +124,17 @@ h4 {
   font-size: 16px;
 }
 p,
-ul {
+ul,
+ol {
   font-weight: normal;
   font-size: 14px;
 }
-ul {
+ul,
+ol {
   margin-bottom: 10px;
 }
-ul li {
+ul li,
+ol li {
   margin-left: 5px;
   list-style-position: inside;
 }
@@ -168,22 +172,25 @@ table.products td ul {
   text-align: right;
   font-size: 15px;
 }
-#order th,
-#order td {
+table.products th,
+table.products td {
   padding: 1px;
 }
-#order tr td {
+table.products tr td {
   border-bottom: 1px solid #ddd;
   padding: 2px;
 }
-#order ul {
+table.products ul {
   margin-bottom: 0;
 }
-#order .picture-col {
+table.products .picture-col {
   width: 20%;
 }
-#order .product-details {
+table.products .product-details {
   color: #666;
+}
+table.products .review-link {
+  font-size: 13px;
 }
 #order-summary {
   width: 280px;
