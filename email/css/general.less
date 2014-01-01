@@ -39,20 +39,30 @@ a {
 }
 
 .btn-primary, .btn-secondary {
-  display: block;
   text-decoration: none;
-  color: #FFF;
-  background-color: #348eda;
+  border-width: 10px 20px;
+  line-height: 2;
+  margin-right: 10px;
   font-weight: bold;
-  margin: 10px 5px 10px 0;
-  padding: 5px 10px;
-  text-align:center;
+  text-align: center;
   cursor: pointer;
   display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn-primary {
+  @bgcolor: #348eda;
+  background-color: @bgcolor;
+  border: solid @bgcolor;
+  color: #FFF;
 }
 
 .btn-secondary{
-  background: #aaa;
+  @bgcolor: #aaa;
+  background: @bgcolor;
+  border: solid @bgcolor;
+  color: #FFF;
 }
 
 .last {
@@ -63,23 +73,29 @@ a {
   margin-top: 0;
 }
 
+.padding{
+  padding: 10px 0;
+}
+
+
 
 /* -------------------------------------
     BODY
 ------------------------------------- */
-table.body-wrap {
+.body-wrap {
   width: 100%;
   padding: 0;
 }
 
 @media only screen and (max-width : 600px) {
-  table.body-wrap {
+  .body-wrap {
     padding: 5px;
   }
 }
 
-table.body-wrap .container{
+.body-wrap .container{
   border: 1px solid #f0f0f0;
+  padding: 10px; // Set the padding on the td rather than the div for Outlook compatibility
 }
 
 
@@ -154,7 +170,6 @@ ul {
 
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
-  padding: 10px;
   max-width:8 00px;
   margin: 0 auto;
   display: block;

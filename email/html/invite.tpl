@@ -51,7 +51,7 @@
     <tr>
         <td colspan="2">
             <p>
-                <a href="[{ $sHomeUrl }]" class="btn btn-primary">[{ $shop->oxshops__oxname->value }]</a>
+                [{include file="$path/button.tpl" url=$sHomeUrl text=$shop->oxshops__oxname->value}]
             </p>
         </td>
     </tr>
