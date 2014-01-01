@@ -1,7 +1,7 @@
 [{ assign var="shop"      value=$oEmailView->getShop() }]
 [{ assign var="oViewConf" value=$oEmailView->getViewConfig() }]
 
-[{assign var="showReviewLink" value=true}]
+[{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showRatingLinks")}]
 
 [{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
 

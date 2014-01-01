@@ -18,9 +18,12 @@ $aModule = array(
         ),
     'extend' => array(
         'oxemail' => 'responsive_email/oxemail_ext',
+        'oxconfig' => 'responsive_email/oxconfig_ext',
         'oxviewconfig' => 'responsive_email/oxviewconfig_ext'
         ),
     'settings'     => array(
+        array('group' => 'config', 'name' => 'showRatingLinks', 'type' => 'bool',  'value' => false, 'position' => 1),
+        array('group' => 'config', 'name' => 'disablePlainEmails', 'type' => 'bool',  'value' => false, 'position' => 2),
         ),
     'templates' => array(
         ),

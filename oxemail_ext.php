@@ -1,23 +1,23 @@
 <?php
 class oxemail_ext extends oxemail_ext_parent {
-    public function __construct() {
+  public function __construct() {
     parent::__construct();
-    $base = realpath(dirname(__FILE__)."/email");
-    $this->_sForgotPwdTemplate          = $base."/html/forgotpwd.tpl";
-    $this->_sNewsletterOptInTemplate    = $base."/html/newsletteroptin.tpl";
-    $this->_sSuggestTemplate            = $base."/html/suggest.tpl";
-    $this->_sInviteTemplate             = $base."/html/invite.tpl";
-    $this->_sSenedNowTemplate           = $base."/html/ordershipped.tpl";
-    $this->_sSendDownloadsTemplate      = $base."/html/senddownloadlinks.tpl";
-    $this->_sWishListTemplate           = $base."/html/wishlist.tpl";
-    $this->_sRegisterTemplate           = $base."/html/register.tpl";
-    $this->_sReminderMailTemplate       = $base."/html/owner_reminder.tpl";
-    $this->_sOrderUserTemplate          = $base."/html/order_cust.tpl";
-    $this->_sOrderOwnerTemplate         = $base."/html/order_owner.tpl";
-    $this->_sOrderUserSubjectTemplate   = $base."/html/order_cust_subj.tpl";
-    $this->_sOrderOwnerSubjectTemplate  = $base."/html/order_owner_subj.tpl";
-    $this->_sOwnerPricealarmTemplate    = $base."/html/pricealarm_owner.tpl";
-    $this->_sPricealamrCustomerTemplate = $base."/html/pricealarm_cust.tpl";
+    require("paths.php");
+    $this->_sForgotPwdTemplate          = $paths['_sForgotPwdTemplate'];
+    $this->_sNewsletterOptInTemplate    = $paths['_sNewsletterOptInTemplate'];
+    $this->_sSuggestTemplate            = $paths['_sSuggestTemplate'];
+    $this->_sInviteTemplate             = $paths['_sInviteTemplate'];
+    $this->_sSenedNowTemplate           = $paths['_sSenedNowTemplate'];
+    $this->_sSendDownloadsTemplate      = $paths['_sSendDownloadsTemplate'];
+    $this->_sWishListTemplate           = $paths['_sWishListTemplate'];
+    $this->_sRegisterTemplate           = $paths['_sRegisterTemplate'];
+    $this->_sReminderMailTemplate       = $paths['_sReminderMailTemplate'];
+    $this->_sOrderUserTemplate          = $paths['_sOrderUserTemplate'];
+    $this->_sOrderOwnerTemplate         = $paths['_sOrderOwnerTemplate'];
+    // $this->_sOrderUserSubjectTemplate   = $paths['_sOrderUserSubjectTemplate'];
+    // $this->_sOrderOwnerSubjectTemplate  = $paths['_sOrderOwnerSubjectTemplate'];
+    $this->_sOwnerPricealarmTemplate    = $paths['_sOwnerPricealarmTemplate'];
+    $this->_sPricealamrCustomerTemplate = $paths['_sPricealamrCustomerTemplate'];
   }
 
   protected function _makeOutputProcessing() {
@@ -43,6 +43,9 @@ class oxemail_ext extends oxemail_ext_parent {
   }
 
   public function send() {
+    if($this->getConfig()->getConfigParam("disablePlainEmails")) { // do not send a plain version, but only a HTML version of the email
+      $this->setAltBody("");
+    }
     return parent::send();
   }
 }

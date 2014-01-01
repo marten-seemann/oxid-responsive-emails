@@ -13,7 +13,7 @@
 
 [{include file="$path/header.tpl" title=$shop->oxshops__oxordersubject->value}]
 
-[{assign var="showReviewLink" value=true}]
+[{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showRatingLinks")}]
 
 [{block name="email_html_order_cust_orderemail"}]
     <p>
@@ -86,7 +86,7 @@
                                 [{/if}]
 
                                 [{if $showReviewLink && $blShowReviewLink}]
-                                    <a href="[{ $oConf->getShopURL() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{$basketitem->getProductId()}]&amp;cl=review&amp;reviewuserhash=[{$user->getReviewUserHash($user->getId())}]" target="_blank">[{oxmultilang ident="REVIEW" }]</a>
+                                    <a href="[{ $oConf->getShopURL() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{$basketitem->getProductId()}]&amp;cl=review&amp;reviewuserhash=[{$user->getReviewUserHash($user->getId())}]" target="_blank" class="review-link">[{oxmultilang ident="REVIEW" }]</a>
                                 [{/if}]
                             </div>
                         </p>
