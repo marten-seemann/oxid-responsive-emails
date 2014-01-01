@@ -93,6 +93,7 @@
 
     [{block name="email_html_ordershipped_shipmenttrackingurl"}]
         [{if $order->getShipmentTrackingUrl()}]
+            <br>
             <p>
                 [{ oxmultilang ident="SHIPMENT_TRACKING" suffix="COLON" }] <a href="[{ $order->getShipmentTrackingUrl()}]" target="_blank" title="[{ oxmultilang ident="CLICK_HERE" }]">[{ oxmultilang ident="CLICK_HERE" }]</a>
             </p>

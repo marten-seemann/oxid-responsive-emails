@@ -14,3 +14,6 @@
       <table>
         <tr>
           <td>
+            <div class="logo">
+                <img src="[{$oViewConf->getImageUrl('logo_email.png', false)}]" border="0" hspace="0" vspace="0" alt="[{ $shop->oxshops__oxname->value }]" align="texttop">
+            </div>
