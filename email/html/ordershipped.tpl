@@ -11,10 +11,6 @@
   .product-details {
     margin-left: 8px;
   }
-
-  #order {
-    margin-bottom: 20px;
-  }
 </style>
 
     [{block name="email_html_ordershipped_sendemail"}]
@@ -44,46 +40,45 @@
               [{ $order->oxorder__oxbillstateid->value }]
               [{ $order->oxorder__oxbillzip->value }] [{ $order->oxorder__oxbillcity->value }]
             [{/if}]
-        </p>
+        </p><br>
     [{/block}]
 
     [{block name="email_html_ordershipped_oxordernr"}]
         <div id="order-nr">
             [{ oxmultilang ident="ORDER_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxordernr->value }]
-        </div>
+        </div><br>
     [{/block}]
 
     <table id="order" class="products">
-    <tr>
-      <td class="picture-col">&nbsp;</td>
-      <td>
-          <p>
-              <b>[{ oxmultilang ident="PRODUCT" }]</b>
-          </p>
-      </td>
-    </tr>
-    [{block name="email_html_ordershipped_orderarticles"}]
-        [{foreach from=$order->getOrderArticles(true) item=oOrderArticle}]
-          <tr valign="top">
-            <td>
-              [{assign var="basketproduct" value=$oOrderArticle->getArticle()}]
-              <img src="[{$basketproduct->getThumbnailUrl(false) }]" border="0" hspace="0" vspace="0" alt="[{$oOrderArticle->oxorderarticles__oxtitle->value|strip_tags}]" align="texttop">
-            </td>
-            <td>
-                <p>
-                    [{assign var="amount" value=$oOrderArticle->oxorderarticles__oxamount->value }]
-                    [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
-                    [{ $oOrderArticle->oxorderarticles__oxtitle->value }] [{ $oOrderArticle->oxorderarticles__oxselvariant->value }]
-                    <div class="product-details">
-                      [{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oOrderArticle->oxorderarticles__oxartnum->value }]<br>
-                      <a href="[{ $oViewConf->getBaseDir() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{ $oOrderArticle->oxorderarticles__oxartid->value }]&amp;cl=review&amp;reviewuserhash=[{$reviewuserhash}]" target="_blank">[{ oxmultilang ident="REVIEW" }]</a>
-                    </div>
-                </p>
-            </td>
-          </tr>
-        [{/foreach}]
-    [{/block}]
+      <tr>
+        <td class="picture-col">&nbsp;</td>
+        <td class="product-col">
+          <b>[{ oxmultilang ident="PRODUCT" }]</b>
+        </td>
+      </tr>
+      [{block name="email_html_ordershipped_orderarticles"}]
+          [{foreach from=$order->getOrderArticles(true) item=oOrderArticle}]
+            <tr valign="top">
+              <td class="picture-col">
+                [{assign var="basketproduct" value=$oOrderArticle->getArticle()}]
+                <img src="[{$basketproduct->getThumbnailUrl(false) }]" border="0" hspace="0" vspace="0" alt="[{$oOrderArticle->oxorderarticles__oxtitle->value|strip_tags}]" align="texttop">
+              </td>
+              <td class="product-col">
+                  <p>
+                      [{assign var="amount" value=$oOrderArticle->oxorderarticles__oxamount->value }]
+                      [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
+                      [{ $oOrderArticle->oxorderarticles__oxtitle->value }] [{ $oOrderArticle->oxorderarticles__oxselvariant->value }]
+                      <div class="product-details">
+                        [{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oOrderArticle->oxorderarticles__oxartnum->value }]<br>
+                        <a href="[{ $oViewConf->getBaseDir() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{ $oOrderArticle->oxorderarticles__oxartid->value }]&amp;cl=review&amp;reviewuserhash=[{$reviewuserhash}]" target="_blank">[{ oxmultilang ident="REVIEW" }]</a>
+                      </div>
+                  </p>
+              </td>
+            </tr>
+          [{/foreach}]
+      [{/block}]
     </table>
+    <br><br>
 
     [{block name="email_html_ordershipped_infofooter"}]
         <p>
@@ -109,7 +104,7 @@
 
             <p>
                 <a href="[{ $oViewConf->getTsRatingUrl() }]" target="_blank" title="[{ oxmultilang ident="TRUSTED_SHOPS_RATINGS" }]">
-                    <img src="[{$sTSRatingImg}]" border="0" alt="[{ oxmultilang ident="WRITE_REVIEW_2" }]" align="middle">
+                    <img src="[{$sTSRatingImg}]" alt="[{ oxmultilang ident="WRITE_REVIEW_2" }]" align="middle">
                 </a>
             </p>
         [{/if}]

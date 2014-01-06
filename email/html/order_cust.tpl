@@ -26,15 +26,16 @@
 [{/block}]
 
         <div id="order-nr">[{oxmultilang ident="ORDER_NUMBER" suffix="COLON"}] [{ $order->oxorder__oxordernr->value }]</div>
+        <br>
 
         <table id="order" class="products">
             <tr>
                 <td class="picture-col">&nbsp;</td>
-                <td>
-                    <p><b>[{oxmultilang ident="PRODUCT" }]</b></p>
+                <td class="product-col">
+                    <b>[{oxmultilang ident="PRODUCT" }]</b>
                 </td>
                 <td class="price">
-                    <p><b>[{oxmultilang ident="TOTAL" }]</b></p>
+                    <b>[{oxmultilang ident="ORDER_EMAIL_TOTAL" }]</b>
                 </td>
           </tr>
 
@@ -45,10 +46,10 @@
                 [{assign var="basketproduct" value=$basketitemlist.$basketindex }]
 
                 <tr>
-                    <td>
-                        <img src="[{$basketproduct->getThumbnailUrl(false)}]" alt="[{$basketitem->getTitle()|strip_tags}]" align="texttop">
+                    <td class="picture-col">
+                        <img src="[{$basketproduct->getThumbnailUrl(false)}]" alt="[{$basketitem->getTitle()|strip_tags}]">
                     </td>
-                    <td>
+                    <td class="product-col">
                         <p>
                             [{assign var="amount" value=$basketitem->getAmount()}]
                             [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
@@ -75,7 +76,7 @@
                                     [{assign var="oWrapping" value=$basketitem->getWrapping() }]
                                     [{if !!$basketitem->getWrappingId() }]
                                         <p>
-                                            [{oxmultilang ident="GIFT_WRAPPING" suffix="COLON"}]&nbsp;
+                                            [{oxmultilang ident="GIFT_WRAPPING" suffix="COLON"}]
                                             [{if !$basketitem->getWrappingId() }]
                                                 [{oxmultilang ident="NONE" }]
                                             [{else}]
@@ -105,19 +106,19 @@
             [{if $oViewConf->getShowGiftWrapping() && $basket->getCard() }]
                 [{assign var="oCard" value=$basket->getCard() }]
                     <tr>
-                        <td>
-                            [{oxmultilang ident="YOUR_GREETING_CARD" suffix="COLON" }]
-                            <img src="[{$oCard->getPictureUrl()}]" alt="[{$oCard->oxwrapping__oxname->value}]" hspace="0" vspace="0" border="0" align="top">
+                        <td class="picture-col">
+                            <img src="[{$oCard->getPictureUrl()}]" alt="[{$oCard->oxwrapping__oxname->value}]">
                         </td>
                         <td colspan="2">
-                              [{oxmultilang ident="WHAT_I_WANTED_TO_SAY" }]<br>
-                              <p id="greeting-card-message">[{$basket->getCardMessage()}]</p>
+                            [{oxmultilang ident="YOUR_GREETING_CARD" suffix="COLON" }]<br>
+                            <p id="greeting-card-message">[{$basket->getCardMessage()}]</p>
                         </td>
                     </tr>
             [{/if}]
         [{/block}]
       </table>
 
+    <br>
 
     <table id="vouchers">
         <tr>
@@ -651,9 +652,9 @@
                 [{oxmultilang ident="PAYMENT_METHOD" suffix="COLON" }]
             </h3>
             <p>
-                <b>[{ $payment->oxpayments__oxdesc->value }]
-                    [{assign var="oPaymentCostPrice" value=$basket->getPaymentCost()}]
-                    [{if $oPaymentCostPrice }]([{oxprice price=$oPaymentCostPrice->getBruttoPrice() currency=$currency}])[{/if}]</b>
+                [{ $payment->oxpayments__oxdesc->value }]
+                [{assign var="oPaymentCostPrice" value=$basket->getPaymentCost()}]
+                [{if $oPaymentCostPrice }]([{oxprice price=$oPaymentCostPrice->getBruttoPrice() currency=$currency}])[{/if}]
             </p>
         [{/if}]
     [{/block}]
@@ -691,7 +692,7 @@
                         [{if $order->oxorder__oxbillustid->value}][{oxmultilang ident="VAT_ID_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxbillustid->value }]<br>[{/if}]
                         [{assign var="phone" value=$order->oxorder__oxbillfon->value}]
                         [{ if strlen($phone) > 0}]
-                            [{oxmultilang ident="PHONE" suffix="COLON" }] [{ $phone }]<br><br>
+                            [{oxmultilang ident="PHONE" suffix="COLON" }] [{ $phone }]<br>
                         [{/if}]
                     </p>
                 </td>
