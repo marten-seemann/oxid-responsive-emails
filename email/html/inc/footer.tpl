@@ -24,5 +24,6 @@
     <td></td>
   </tr>
 </table>
+[{$oViewConf->unsetForceRetina()}]
 </body>
 </html>

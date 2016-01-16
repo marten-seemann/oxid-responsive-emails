@@ -6,6 +6,7 @@
   <title>[{$title}]</title>
 </head>
 <body bgcolor="#f6f6f6">
+[{$oViewConf->setForceRetina(true)}]
 <table class="body-wrap">
   <tr>
     <td></td>
