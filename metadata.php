@@ -22,8 +22,8 @@ $aModule = array(
         'oxviewconfig' => 'responsive_email/oxviewconfig_ext'
         ),
     'settings'     => array(
-        array('group' => 'config', 'name' => 'showRatingLinks', 'type' => 'bool',  'value' => false, 'position' => 1),
-        array('group' => 'config', 'name' => 'disablePlainEmails', 'type' => 'bool',  'value' => false, 'position' => 2),
+        array('group' => 'responsive_email_config', 'name' => 'showRatingLinks', 'type' => 'bool',  'value' => false, 'position' => 1),
+        array('group' => 'responsive_email_config', 'name' => 'disablePlainEmails', 'type' => 'bool',  'value' => false, 'position' => 2),
         ),
     'templates' => array(
         ),
