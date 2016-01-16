@@ -2,7 +2,7 @@
 class oxemail_ext extends oxemail_ext_parent {
   public function __construct() {
     parent::__construct();
-    require("paths.php");
+    require(dirname(__FILE__)."/../paths.php");
     $this->_sForgotPwdTemplate          = $paths['_sForgotPwdTemplate'];
     $this->_sNewsletterOptInTemplate    = $paths['_sNewsletterOptInTemplate'];
     $this->_sSuggestTemplate            = $paths['_sSuggestTemplate'];
@@ -22,8 +22,8 @@ class oxemail_ext extends oxemail_ext_parent {
 
   protected function _makeOutputProcessing() {
     $body = $this->getBody();
-    $css = file_get_contents(realpath(dirname(__FILE__)."/email/dest/css/styles.css"));
-    require_once(dirname(__FILE__)."/vendor/autoload.php");
+    $css = file_get_contents(realpath(dirname(__FILE__)."/../email/dest/css/styles.css"));
+    require_once(dirname(__FILE__)."/../vendor/autoload.php");
     $cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
     $cssToInlineStyles->setUseInlineStylesBlock(true);
     $cssToInlineStyles->setStripOriginalStyleTags(false);
