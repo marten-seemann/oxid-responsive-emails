@@ -8,7 +8,7 @@
 
 [{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
 
-[{include file="$path/header.tpl" title=$shop->oxshops__oxordersubject->value}]
+[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxordersubject->value}]
 
 <h1>[{oxmultilang ident="ORDER_OWNER_NEWORDER"}]</h1>
         [{block name="email_html_order_owner_orderemail"}]
@@ -701,4 +701,4 @@
                 [{/if}]
             [{/block}]
 
-[{include file="$path/footer.tpl"}]
+[{include file="$path/inc/footer.tpl"}]

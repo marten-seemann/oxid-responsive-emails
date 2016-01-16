@@ -5,7 +5,7 @@
 
 [{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
 
-[{include file="$path/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
 
     [{block name="email_html_senddownloadlinks_infoheader"}]
         [{ oxmultilang ident="EMAIL_SENDDOWNLOADS_GREETING" }], [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],
@@ -60,4 +60,4 @@
         [{/if}]
     [{/block}]
 
-[{include file="$path/footer.tpl"}]
+[{include file="$path/inc/footer.tpl"}]

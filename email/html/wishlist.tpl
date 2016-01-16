@@ -2,7 +2,9 @@
 [{ assign var="oViewConf" value=$oEmailView->getViewConfig() }]
 [{ assign var="userInfo"      value=$oEmailView->getUser() }]
 
-[{include file="email/html/header.tpl" title=$shop->oxshops__oxname->value}]
+[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
+
+[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
 
     <h3>
         [{ oxmultilang ident="GIFT_REGISTRY_OF_2" }]
@@ -23,4 +25,4 @@
           [{$userInfo->send_name|oxescape}]
     </p>
 
-[{include file="email/html/footer.tpl"}]
+[{include file="$path/inc/footer.tpl"}]

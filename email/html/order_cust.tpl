@@ -11,7 +11,7 @@
 
 [{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
 
-[{include file="$path/header.tpl" title=$shop->oxshops__oxordersubject->value}]
+[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxordersubject->value}]
 
 [{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showRatingLinks")}]
 
@@ -762,4 +762,4 @@
         [{/if}]
     [{/block}]
 
-[{include file="$path/footer.tpl"}]
+[{include file="$path/inc/footer.tpl"}]
