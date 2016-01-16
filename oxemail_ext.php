@@ -23,7 +23,7 @@ class oxemail_ext extends oxemail_ext_parent {
   protected function _makeOutputProcessing() {
     $body = $this->getBody();
     $css = file_get_contents(realpath(dirname(__FILE__)."/email/css/styles.css"));
-    require_once("csstoinline/CssToInlineStyles.php");
+    require_once(dirname(__FILE__)."/vendor/autoload.php");
     $cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
     $cssToInlineStyles->setUseInlineStylesBlock(true);
     $cssToInlineStyles->setStripOriginalStyleTags(false);

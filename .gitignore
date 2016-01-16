@@ -1,3 +1,4 @@
 build/encoder/encrypted*
 build/productive
 build/tmp
+/vendor/
