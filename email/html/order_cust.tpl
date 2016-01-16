@@ -9,9 +9,7 @@
 [{assign var="sOrderId"   value=$order->getId() }]
 [{assign var="oOrderFileList"   value=$oEmailView->getOrderFileList($sOrderId) }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxordersubject->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
 [{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showRatingLinks")}]
 
@@ -762,4 +760,4 @@
         [{/if}]
     [{/block}]
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

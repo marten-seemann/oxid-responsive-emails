@@ -6,9 +6,7 @@
 [{assign var="oDelSet"   value=$order->getDelSet() }]
 [{assign var="payment"   value=$order->getPayment() }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxordersubject->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
 <h1>[{oxmultilang ident="ORDER_OWNER_NEWORDER"}]</h1>
         [{block name="email_html_order_owner_orderemail"}]
@@ -701,4 +699,4 @@
                 [{/if}]
             [{/block}]
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

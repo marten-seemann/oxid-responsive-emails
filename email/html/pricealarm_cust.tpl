@@ -3,9 +3,7 @@
 [{ assign var="currency"  value=$oEmailView->getCurrency() }]
 [{ assign var="user"      value=$oEmailView->getUser() }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
   <h1>[{oxmultilang ident="PRICE_ALERT"}]</h1>
 
@@ -22,11 +20,11 @@
   [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_CLICKHERE1" }]<br>
   [{ assign var=url value=$oViewConf->getBaseDir()|cat:'index.php?cl=details&anid='|cat:$product->oxarticles__oxid->value}]
   [{capture name="text" assign="text"}][{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_CLICKHERE2" }][{/capture}]
-  [{include file="$path/inc/button.tpl" url=$url text=$text}]
+  [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$url text=$text}]
   <br>
 
   [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_TEAM1" }] [{ $shop->oxshops__oxname->value }] [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_TEAM2" }]<br>
 
 
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

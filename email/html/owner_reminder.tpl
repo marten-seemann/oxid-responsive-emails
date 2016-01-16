@@ -1,9 +1,7 @@
 [{ assign var="shop"     value=$oEmailView->getShop() }]
 [{ assign var="oViewConf" value=$oEmailView->getViewConfig() }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
 <h3>
     [{ oxmultilang ident="MESSAGE_STOCK_LOW" }]
@@ -48,4 +46,4 @@
     [{/foreach}]
 </table>
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

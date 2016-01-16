@@ -2,9 +2,7 @@
 [{ assign var="oViewConf" value=$oEmailView->getViewConfig() }]
 [{ assign var="userinfo"  value=$oEmailView->getUser() }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
 <h3>
     [{ oxmultilang ident="SELECTED_SHIPPING_CARRIER" suffix="COLON" }]
@@ -51,7 +49,7 @@
     <tr>
         <td colspan="2">
             <p>
-                [{include file="$path/inc/button.tpl" url=$sHomeUrl text=$shop->oxshops__oxname->value}]
+                [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$sHomeUrl text=$shop->oxshops__oxname->value}]
             </p>
         </td>
     </tr>
@@ -67,4 +65,4 @@
     </tr>
 </table>
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

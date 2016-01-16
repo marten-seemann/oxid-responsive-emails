@@ -2,31 +2,53 @@
 class oxemail_ext extends oxemail_ext_parent {
   public function __construct() {
     parent::__construct();
-    require(dirname(__FILE__)."/../paths.php");
-    $this->_sForgotPwdTemplate          = $paths['_sForgotPwdTemplate'];
-    $this->_sNewsletterOptInTemplate    = $paths['_sNewsletterOptInTemplate'];
-    $this->_sSuggestTemplate            = $paths['_sSuggestTemplate'];
-    $this->_sInviteTemplate             = $paths['_sInviteTemplate'];
-    $this->_sSenedNowTemplate           = $paths['_sSenedNowTemplate'];
-    $this->_sSendDownloadsTemplate      = $paths['_sSendDownloadsTemplate'];
-    $this->_sWishListTemplate           = $paths['_sWishListTemplate'];
-    $this->_sRegisterTemplate           = $paths['_sRegisterTemplate'];
-    $this->_sReminderMailTemplate       = $paths['_sReminderMailTemplate'];
-    $this->_sOrderUserTemplate          = $paths['_sOrderUserTemplate'];
-    $this->_sOrderOwnerTemplate         = $paths['_sOrderOwnerTemplate'];
-    // $this->_sOrderUserSubjectTemplate   = $paths['_sOrderUserSubjectTemplate'];
-    // $this->_sOrderOwnerSubjectTemplate  = $paths['_sOrderOwnerSubjectTemplate'];
-    $this->_sOwnerPricealarmTemplate    = $paths['_sOwnerPricealarmTemplate'];
-    $this->_sPricealamrCustomerTemplate = $paths['_sPricealamrCustomerTemplate'];
+    require(dirname(__FILE__)."/../inc/paths.php");
+    $this->paths = $paths;
+
+    $this->_sForgotPwdTemplate          = $this->getTemplatePath('_sForgotPwdTemplate');
+    $this->_sNewsletterOptInTemplate    = $this->getTemplatePath('_sNewsletterOptInTemplate');
+    $this->_sSuggestTemplate            = $this->getTemplatePath('_sSuggestTemplate');
+    $this->_sInviteTemplate             = $this->getTemplatePath('_sInviteTemplate');
+    $this->_sSenedNowTemplate           = $this->getTemplatePath('_sSenedNowTemplate');
+    $this->_sSendDownloadsTemplate      = $this->getTemplatePath('_sSendDownloadsTemplate');
+    $this->_sWishListTemplate           = $this->getTemplatePath('_sWishListTemplate');
+    $this->_sRegisterTemplate           = $this->getTemplatePath('_sRegisterTemplate');
+    $this->_sReminderMailTemplate       = $this->getTemplatePath('_sReminderMailTemplate');
+    $this->_sOrderUserTemplate          = $this->getTemplatePath('_sOrderUserTemplate');
+    $this->_sOrderOwnerTemplate         = $this->getTemplatePath('_sOrderOwnerTemplate');
+    // $this->_sOrderUserSubjectTemplate   = $this->getTemplatePath('_sOrderUserSubjectTemplate');
+    // $this->_sOrderOwnerSubjectTemplate  = $this->getTemplatePath('_sOrderOwnerSubjectTemplate');
+    $this->_sOwnerPricealarmTemplate    = $this->getTemplatePath('_sOwnerPricealarmTemplate');
+    $this->_sPricealamrCustomerTemplate = $this->getTemplatePath('_sPricealamrCustomerTemplate');
   }
 
+  /**
+  * get the path for a template file
+  * if the file exists in the folder where users make modifications, return this file path, else return the file path to the original file
+  *
+  * @return string the path
+  */
+  private function getTemplatePath($index) {
+    $base = realpath($this->getViewConfig()->getResponsiveEmailPath());
+    $mod_base = realpath($this->getViewConfig()->getResponsiveEmailModifiedPath());
+
+    $filename = $this->paths[$index];
+
+    if(file_exists($mod_base."/".$filename)) return $mod_base."/".$filename;
+    else return $base."/".$filename;
+  }
+
+  /**
+  * process the body of the email
+  * apply CSS styles by reading the CSS file and inlining all of the rules
+  */
   protected function _makeOutputProcessing() {
     $body = $this->getBody();
-    $css = file_get_contents(realpath(dirname(__FILE__)."/../email/dest/css/styles.css"));
+    $css = file_get_contents(realpath($this->getViewConfig()->getResponsiveEmailPath()."/dest/css/styles.css"));
 
     // add user defined style definitions
-    if(file_exists(dirname(__FILE__)."/../modified/css/styles.css")) {
-      $css .= file_get_contents(realpath(dirname(__FILE__)."/../modified/css/styles.css"));
+    if(file_exists($this->getViewConfig()->getResponsiveEmailModifiedPath()."/css/styles.css")) {
+      $css .= file_get_contents(realpath($this->getViewConfig()->getResponsiveEmailModifiedPath()."/css/styles.css"));
     }
 
     require_once(dirname(__FILE__)."/../vendor/autoload.php");

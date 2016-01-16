@@ -3,9 +3,7 @@
 [{ assign var="sOrderId"   value=$order->getId() }]
 [{ assign var="oOrderFileList"   value=$oEmailView->getOrderFileList($sOrderId) }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
     [{block name="email_html_senddownloadlinks_infoheader"}]
         [{ oxmultilang ident="EMAIL_SENDDOWNLOADS_GREETING" }], [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],
@@ -60,4 +58,4 @@
         [{/if}]
     [{/block}]
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

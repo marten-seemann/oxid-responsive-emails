@@ -3,10 +3,8 @@
 [{ assign var="currency"  value=$oEmailView->getCurrency() }]
 [{ assign var="user"      value=$oEmailView->getUser() }]
 
-[{assign var="path" value=$oViewConf->getResponsiveEmailPath()}]
-
-[{include file="$path/inc/header.tpl" title=$shop->oxshops__oxname->value}]
+[{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
     [{ oxcontent ident="oxpricealarmemail" }]
 
-[{include file="$path/inc/footer.tpl"}]
+[{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]
