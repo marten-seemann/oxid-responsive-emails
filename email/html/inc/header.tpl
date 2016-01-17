@@ -7,6 +7,7 @@
 </head>
 <body bgcolor="#f6f6f6">
 [{$oViewConf->setForceRetina(true)}]
+[{$oViewConf->setForceDevice('desktop')}]
 <table class="body-wrap">
   <tr>
     <td></td>

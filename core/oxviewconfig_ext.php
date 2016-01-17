@@ -35,7 +35,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   * otherwise, don't do anything. Just serve the normal images
   */
   public function setForceRetina($val) {
-    if(method_exists(parent, 'setForceRetinaDevice')) {
+    if(method_exists($this, 'setForceRetinaDevice')) {
       parent::setForceRetinaDevice($val);
     }
   }
@@ -44,8 +44,27 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   * check if we're dealing with a ROXID, if so, unset the forcing of retina image output
   */
   public function unsetForceRetina() {
-    if(method_exists(parent, 'unsetForceRetinaDevice')) {
+    if(method_exists($this, 'unsetForceRetinaDevice')) {
       parent::unsetForceRetinaDevice();
+    }
+  }
+
+  /**
+  * check if we're dealing with a ROXID. Then we need to make sure to send out the pictures in desktop resolution
+  * otherwise, don't do anything. Just serve the normal images
+  */
+  public function setForceDevice($val) {
+    if(method_exists($this, 'setForceDeviceType')) {
+      parent::setForceDeviceType($val);
+    }
+  }
+
+  /**
+  * check if we're dealing with a ROXID, if so, unset the forced device type
+  */
+  public function unsetForceDevice() {
+    if(method_exists($this, 'unsetForceDeviceType')) {
+      parent::unsetForceDeviceType();
     }
   }
 }
