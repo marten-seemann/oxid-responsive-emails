@@ -14,8 +14,8 @@
       <div class="content">
         <table>
           <tr>
-            <td align="center">
-              [{ oxcontent ident="oxemailfooter" }]
+            <td>
+              <p>[{ oxcontent ident="oxemailfooter" }]</p>
             </td>
           </tr>
         </table>

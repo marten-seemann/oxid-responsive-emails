@@ -8,9 +8,9 @@
         [{ oxmultilang ident="POST_CARD_FROM" }]
     </h3>
 
-    <table border="0" width="100%"cellspacing="10" cellpadding="0">
+    <table>
         <tr>
-            <td style="width:130px;">
+            <td>
                 <p>
                     <b>[{ oxmultilang ident="FROM" suffix="COLON" }]</b>
                 </p>
@@ -58,6 +58,7 @@
             </td>
         </tr>
     </table>
+    <br>
 
     <p>
         [{$userInfo->send_message|oxescape|nl2br}]

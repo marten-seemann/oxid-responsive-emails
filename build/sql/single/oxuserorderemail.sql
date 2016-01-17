@@ -1,0 +1,2 @@
+UPDATE `oxcontents` SET `OXCONTENT`='<h1>Vielen Dank für Ihre Bestellung!</h1>\r\n\r\nNachfolgend haben wir zur Kontrolle Ihre Bestellung noch einmal aufgelistet.<br>\r\n\r\n<p>Bei Fragen sind wir jederzeit für Sie da: Schreiben Sie einfach an [{ $shop->oxshops__oxorderemail->value }]!</p>', `OXCONTENT_1`='<h1>Thank you for your order!</h1>\r\n\r\nBelow, we have listed your order.<br>\r\n\r\n<p>If you have any questions, don\'t hesitate to drop us an e-mail [{ $shop->oxshops__oxorderemail->value }]!</p>' WHERE `OXLOADID`='oxuserorderemail' AND `OXSHOPID`='oxbaseshop';
+

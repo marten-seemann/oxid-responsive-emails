@@ -1,5 +1,9 @@
 @import "general.less";
 
+addr {
+  font-style: inherit;
+}
+
 table.products td, table.products td p, table.products td ul {
   font-size: 13px;
 }
@@ -83,4 +87,20 @@ table.products {
   width: 25%;
   text-align: right;
   white-space: nowrap;
+}
+
+.warning {
+  color: #d9534f;
+}
+
+.footer-wrap {
+  @bgcolor: #F6F6F6;
+  border-top: 1px solid darken(@bgcolor, 5%);
+  * {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 15px 10px 10px 10px;
+  }
 }

@@ -21,6 +21,7 @@
           [{oxcontent ident="oxuserorderemail"}]
         [{/if}]
     </p>
+    <br>
 [{/block}]
 
         <div id="order-nr">[{oxmultilang ident="ORDER_NUMBER" suffix="COLON"}] [{ $order->oxorder__oxordernr->value }]</div>
@@ -742,6 +743,7 @@
     [{/block}]
 
     [{block name="email_html_order_cust_orderemailend"}]
+        <br>
         <p>
             [{oxcontent ident="oxuserorderemailend" }]
         </p>

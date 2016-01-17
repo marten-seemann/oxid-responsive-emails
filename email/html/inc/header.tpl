@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>[{$title}]</title>
 </head>
-<body bgcolor="#f6f6f6">
+<body>
 [{$oViewConf->setForceRetina(true)}]
 [{$oViewConf->setForceDevice('desktop')}]
 <table class="body-wrap">

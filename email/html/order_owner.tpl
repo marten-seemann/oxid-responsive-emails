@@ -17,6 +17,7 @@
                     [{oxcontent ident="oxadminorderemail"}]
                 [{/if}]
             </p>
+            <br>
         [{/block}]
 
         <div id="order-nr">[{oxmultilang ident="ORDER_NUMBER" suffix="COLON"}] [{ $order->oxorder__oxordernr->value }]</div>

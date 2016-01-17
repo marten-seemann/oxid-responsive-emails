@@ -1,5 +1,0 @@
-UPDATE oxcontents SET
-    OXCONTENT='<h1>Vielen Dank für Ihre Bestellung!</h1>\r\n\r\n<p><strong>Hinweis:</strong> Derzeit ist uns keine Versandmethode für dieses Land bekannt. Wir werden versuchen, Versandmethoden zu finden und Sie über das Ergebnis unter Angabe der Versandkosten informieren. </p>Bei Fragen sind wir jederzeit für Sie da: Schreiben Sie einfach an [{ $shop->oxshops__oxorderemail->value }]! <br />\r\n',
-    OXCONTENT_1='<h1>Thank you for your order!</h1>\r\n\r\n<p><strong>Information:</strong> Currently, there is no shipping method defined for your country. We will find a method to deliver the goods you purchased and will inform you as soon as possible.</p>\r\n<p>If you have any requests, don\'t hesitate to contact us! [{ $shop->oxshops__oxorderemail->value }]</p>'
-    WHERE OXLOADID='oxuserordernpemail' AND OXSHOPID='oxbaseshop'
-    ;

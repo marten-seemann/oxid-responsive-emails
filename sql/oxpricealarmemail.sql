@@ -1,5 +1,0 @@
-UPDATE oxcontents SET
-    OXCONTENT='<h1>Preisalarm</h1>\r\n\r\nPreisalarm im [{ $shop->oxshops__oxname->value }]!<br>\r\n<br>\r\n[{ $email }] bietet für Artikel <strong>[{ $product->oxarticles__oxtitle->value }]</strong>, Artnum. [{ $product->oxarticles__oxartnum->value }]<br>\r\n<br>\r\nOriginalpreis: [{ $product->getFPrice() }] [{ $currency->name}]<br>\r\nGEBOTEN: [{ $bidprice }] [{ $currency->name}]<br>\r\n<br>\r\n<br>\r\nIhr Shop.<br>',
-    OXCONTENT_1='<h1>Price alert</h1>\r\n\r\nPrice alert at [{ $shop->oxshops__oxname->value }]!<br>\r\n<br>\r\n[{ $email }] bids for product <strong>[{ $product->oxarticles__oxtitle->value }]</strong>, product # [{ $product->oxarticles__oxartnum->value }]<br>\r\n<br>\r\nOriginal price: [{ $currency->name}][{ $product->getFPrice() }]<br>\r\nBid: [{ $currency->name}][{ $bidprice }]<br>\r\n<br>\r\n<br>\r\nYour store<br>'
-    WHERE OXLOADID='oxpricealarmemail' AND OXSHOPID='oxbaseshop'
-    ;
