@@ -19,6 +19,7 @@ $aModule = array(
     'extend' => array(
         'oxemail' => 'responsive_email/core/oxemail_ext',
         'oxconfig' => 'responsive_email/core/oxconfig_ext',
+        'oxutilsview' => 'responsive_email/core/oxutilsview_ext',
         'oxviewconfig' => 'responsive_email/core/oxviewconfig_ext',
         ),
     'settings'     => array(
