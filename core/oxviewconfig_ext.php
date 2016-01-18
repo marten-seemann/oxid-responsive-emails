@@ -36,7 +36,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   */
   public function setForceRetina($val) {
     if(method_exists($this, 'setForceRetinaDevice')) {
-      parent::setForceRetinaDevice($val);
+      $this->setForceRetinaDevice($val);
     }
   }
 
@@ -45,7 +45,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   */
   public function unsetForceRetina() {
     if(method_exists($this, 'unsetForceRetinaDevice')) {
-      parent::unsetForceRetinaDevice();
+      $this->unsetForceRetinaDevice();
     }
   }
 
@@ -55,7 +55,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   */
   public function setForceDevice($val) {
     if(method_exists($this, 'setForceDeviceType')) {
-      parent::setForceDeviceType($val);
+      $this->setForceDeviceType($val);
     }
   }
 
@@ -64,7 +64,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   */
   public function unsetForceDevice() {
     if(method_exists($this, 'unsetForceDeviceType')) {
-      parent::unsetForceDeviceType();
+      $this->unsetForceDeviceType();
     }
   }
 }
