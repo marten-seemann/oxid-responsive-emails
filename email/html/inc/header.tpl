@@ -5,10 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>[{$title}]</title>
 </head>
-<body>
+<body bgcolor="#f6f6f6">
 [{$oViewConf->setForceRetina(true)}]
 [{$oViewConf->setForceDevice('desktop')}]
-<table class="body-wrap">
+<table class="body-wrap" bgcolor="#f6f6f6" border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td></td>
     <td class="container" bgcolor="#FFFFFF">
