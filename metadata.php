@@ -21,6 +21,7 @@ $aModule = array(
         'oxconfig' => 'responsive_email/core/oxconfig_ext',
         'oxutilsview' => 'responsive_email/core/oxutilsview_ext',
         'oxviewconfig' => 'responsive_email/core/oxviewconfig_ext',
+        'oxarticle' => 'responsive_email/core/oxarticle_ext',
         ),
     'settings'     => array(
         array('group' => 'responsive_email_config', 'name' => 'showRatingLinks', 'type' => 'bool',  'value' => false, 'position' => 1),
