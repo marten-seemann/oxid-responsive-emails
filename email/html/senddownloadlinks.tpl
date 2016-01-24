@@ -5,22 +5,25 @@
 
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
-    [{block name="email_html_senddownloadlinks_infoheader"}]
-        [{ oxmultilang ident="EMAIL_SENDDOWNLOADS_GREETING" }], [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],
+    <h1>[{ oxmultilang ident="EMAIL_SENDDOWNLOADS_TITLE"}]</h1>
+
+    [{block name="email_html_senddownloadlinks_oxordernr"}]
+        <div id="order-nr">
+            [{ oxmultilang ident="ORDER_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxordernr->value }]
+        </div>
         <br>
     [{/block}]
 
-    [{block name="email_html_senddownloadlinks_oxordernr"}]
-        <h3>
-            [{ oxmultilang ident="ORDER_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxordernr->value }]
-        </h3>
+    [{block name="email_html_senddownloadlinks_infoheader"}]
+        [{ oxmultilang ident="EMAIL_SENDDOWNLOADS_GREETING" }], [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],
+        <br><br>
     [{/block}]
 
     [{ if $oOrderFileList and $oOrderFileList|count }]
         [{block name="email_html_senddownloadlinks_download_header"}]
-            <h4>
+            <p>
                 [{ oxmultilang ident="MY_DOWNLOADS_DESC" }]
-            </h4>
+            </p>
         [{/block}]
         [{block name="email_html_senddownloadlinks_download_link"}]
             [{foreach from=$oOrderFileList item="oOrderFile"}]
