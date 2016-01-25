@@ -5,22 +5,22 @@
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
     <h3>
-        [{ oxmultilang ident="GIFT_REGISTRY_OF_2" }]
+        [{ oxmultilang ident="GIFT_REGISTRY_OF_2" }] [{$shop->oxshops__oxname->value}]
     </h3>
 
     <p>
           [{$userInfo->send_message|oxescape}]
+          <br>
+          [{ oxmultilang ident="TO_MY_WISHLIST" }]
 
-    <p>
-          [{ oxmultilang ident="TO_MY_WISHLIST" }] <a href="[{ $oViewConf->getBaseDir() }]index.php?cl=wishlist&wishid=[{$userInfo->send_id}]"><b>[{ oxmultilang ident="CLICK_HERE" }]</b></a>
+          [{assign var="wishlistLink" value=$oViewConf->getBaseDir()|cat:"index.php?cl=wishlist&wishid="|cat:$userInfo->send_id}]
+          [{assign var="linkText" value="CLICK_HERE"|oxmultilangassign}]
+          [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$wishlistLink text=$linkText}]
     </p>
 
     <p>
-          [{ oxmultilang ident="WITH_LOVE" }]
-    </p>
-
-    <p>
-          [{$userInfo->send_name|oxescape}]
+        [{ oxmultilang ident="WITH_LOVE" }]<br>
+        [{$userInfo->send_name|oxescape}]
     </p>
 
 [{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]
