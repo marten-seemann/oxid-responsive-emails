@@ -17,7 +17,7 @@ class oxviewconfig_ext extends oxviewconfig_ext_parent {
   * @return string the path
   */
   public function getResponsiveEmailModifiedPath() {
-    return $this->getModulePath('responsive_email', 'modified/email/');
+    return $this->getModulePath('responsive_email').'modified/email/';
   }
 
   /**

@@ -53,7 +53,7 @@ class oxemail_ext extends oxemail_ext_parent {
 
     require_once(dirname(__FILE__)."/../vendor/autoload.php");
     $cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
-    $cssToInlineStyles->setUseInlineStylesBlock(true);
+    $cssToInlineStyles->setUseInlineStylesBlock(false);
     $cssToInlineStyles->setStripOriginalStyleTags(false);
     // $cssToInlineStyles->setStripOriginalStyleTags(true);
     $cssToInlineStyles->setExcludeMediaQueries(false);
@@ -66,10 +66,15 @@ class oxemail_ext extends oxemail_ext_parent {
 
     $oOutput = oxNew( "oxOutput" );
     $this->setBody( $oOutput->process($html, "oxemail") );
-    // $this->setAltBody( $oOutput->process($this->getAltBody(), "oxemail") );
+
+    $this->setAltBody( $oOutput->process($this->getAltBody(), "oxemail") );
     $oOutput->processEmail( $this );
   }
 
+  /**
+  * send out the email
+  * reads the config option if plain text emails are disabled and removes the plain version if neccessary
+  */
   public function send() {
     if($this->getConfig()->getConfigParam("disablePlainEmails")) { // do not send a plain version, but only a HTML version of the email
       $this->setAltBody("");
