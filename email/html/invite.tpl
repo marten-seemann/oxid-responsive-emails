@@ -8,7 +8,7 @@
     [{ oxmultilang ident="SELECTED_SHIPPING_CARRIER" suffix="COLON" }]
 </h3>
 
-<table>
+<table border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td>
             <p>
@@ -59,7 +59,8 @@
     <tr>
         <td colspan="2">
             <p>
-                [{ oxmultilang ident="MANY_GREETINGS" }]<br>[{$userinfo->send_name|oxescape}]
+                [{ oxmultilang ident="MANY_GREETINGS" }]<br>
+                [{$userinfo->send_name|oxescape}]
             </p>
         </td>
     </tr>

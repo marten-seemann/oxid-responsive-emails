@@ -8,66 +8,45 @@
         [{ oxmultilang ident="POST_CARD_FROM" }]
     </h3>
 
-    <table>
+    <table class="suggest" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td>
-                <p>
-                    <b>[{ oxmultilang ident="FROM" suffix="COLON" }]</b>
-                </p>
+                <b>[{ oxmultilang ident="FROM" suffix="COLON" }]</b>
             </td>
             <td>
-                <p>
-                    [{$userInfo->send_name|oxescape}]<br>
-                </p>
+                [{$userInfo->send_name|oxescape}]
             </td>
         </tr>
         <tr>
             <td>
-                <p>
-                    <b>[{ oxmultilang ident="EMAIL" suffix="COLON" }]</b>
-                </p>
+                <b>[{ oxmultilang ident="EMAIL" suffix="COLON" }]</b>
             </td>
             <td>
-                <p>
-                    [{$userInfo->send_email|oxescape}]
-                </p>
+                [{$userInfo->send_email|oxescape}]
             </td>
         </tr>
         <tr>
             <td>
-                <p>
-                    <b>[{ oxmultilang ident="TO" suffix="COLON" }]</b>
-                </p>
+                <b>[{ oxmultilang ident="TO" suffix="COLON" }]</b>
             </td>
             <td>
-                <p>
-                    [{$userInfo->rec_name|oxescape}]
-                </p>
+                [{$userInfo->rec_name|oxescape}]
             </td>
         </tr>
         <tr>
             <td>
-                <p>
-                    <b>[{ oxmultilang ident="EMAIL" suffix="COLON" }]</b>
-                </p>
+                <b>[{ oxmultilang ident="EMAIL" suffix="COLON" }]</b>
             </td>
             <td>
-                <p>
-                    [{$userInfo->rec_email|oxescape}]
-                </p>
+                [{$userInfo->rec_email|oxescape}]
             </td>
         </tr>
     </table>
     <br>
 
-    <p>
-        [{$userInfo->send_message|oxescape|nl2br}]
-    </p>
+    <p>[{$userInfo->send_message|oxescape|nl2br}]</p>
 
-    <p>
-        [{ oxmultilang ident="MANY_GREETINGS" }] [{$userInfo->send_name|oxescape}]
-    </p>
-
+    <p>[{ oxmultilang ident="MANY_GREETINGS" }] [{$userInfo->send_name|oxescape}]</p>
     <br>
 
     <p>
@@ -78,8 +57,6 @@
         <a href="[{ $sArticleUrl }]"><b>[{ $product->oxarticles__oxtitle->value }]</b></a>
     </p>
 
-    <p>
-        [{ $product->oxarticles__oxshortdesc->value }]
-    </p>
+    <p>[{ $product->oxarticles__oxshortdesc->value }]</p>
 
 [{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

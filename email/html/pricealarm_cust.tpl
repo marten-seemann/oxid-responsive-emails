@@ -15,10 +15,11 @@
   <p>
     [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_ITEM1" }] [{ $oPriceAlarm->getTitle() }] [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_ITEM2" }] [{ $oPriceAlarm->getFProposedPrice() }] [{ $currency->sign}]
     [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_ITEM3" }] [{ $oPriceAlarm->getFPrice() }] [{ $currency->sign }] [{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_ITEM4" }]
-  </p><br>
+  </p>
+  <br>
 
   <p>[{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_CLICKHERE1" }]</p>
-  [{ assign var=url value=$oViewConf->getBaseDir()|cat:'index.php?cl=details&anid='|cat:$product->oxarticles__oxid->value}]
+  [{assign var=url value=$oViewConf->getBaseDir()|cat:'index.php?cl=details&anid='|cat:$product->oxarticles__oxid->value}]
   [{capture name="text" assign="text"}][{ oxmultilang ident="EMAIL_PRICEALARM_CUSTOMER_CLICKHERE2" }][{/capture}]
   [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$url text=$text}]
   <br>

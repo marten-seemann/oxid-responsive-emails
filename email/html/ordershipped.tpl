@@ -5,12 +5,6 @@
 
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
-<style>
-  .product-details {
-    margin-left: 8px;
-  }
-</style>
-
     [{block name="email_html_ordershipped_sendemail"}]
        [{ oxcontent ident="oxordersendemail" }]
     [{/block}]
@@ -47,7 +41,7 @@
         </div><br>
     [{/block}]
 
-    <table id="order" class="products">
+    <table id="order" class="products" border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td class="picture-col">&nbsp;</td>
         <td class="product-col">

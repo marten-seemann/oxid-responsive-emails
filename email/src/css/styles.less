@@ -2,7 +2,6 @@
 
 * {
   font-size: 14px;
-  font-weight: normal;
 }
 
 h1 {
@@ -76,7 +75,15 @@ table.products td, table.products td p, table.products td ul {
   font-size: 15px;
 }
 
+table.suggest {
+  th, td {
+    padding: 1px;
+  }
+}
+
 table.products {
+  width: 100%;
+
   th, td {
     padding: 1px;
   }
@@ -97,6 +104,7 @@ table.products {
 
     img {
       max-height: 120px;
+      width: auto !important; // overwrite the <img width=xxx> setting. It is only used by Outlook
     }
   }
 
@@ -105,7 +113,7 @@ table.products {
   }
 
   .product-details {
-    color: #666;
+    color: #444;
   }
 
   .review-link {
@@ -115,10 +123,10 @@ table.products {
 
 
 #order-summary {
-  width: 280px;
+  width: 270px;
 
   th, td {
-    padding: 1px;
+    padding: 2px;
   }
 
   th {
@@ -131,6 +139,10 @@ table.products {
 #vouchers {
   margin-bottom: 5px;
   width: 220px;
+
+  th, td {
+    padding: 2px 1px;
+  }
 }
 
 #grand-total {
@@ -142,6 +154,12 @@ table.products {
 #greeting-card-message {
   margin-left: 8px;
   font-size: 12px;
+}
+
+#order-address {
+  th, td {
+    vertical-align: top;
+  }
 }
 
 .price {

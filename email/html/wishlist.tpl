@@ -15,8 +15,9 @@
 
           [{assign var="wishlistLink" value=$oViewConf->getBaseDir()|cat:"index.php?cl=wishlist&wishid="|cat:$userInfo->send_id}]
           [{assign var="linkText" value="CLICK_HERE"|oxmultilangassign}]
-          [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$wishlistLink text=$linkText}]
     </p>
+
+    [{include file=$oViewConf->getTemplatePath("inc/button.tpl") url=$wishlistLink text=$linkText}]
 
     <p>
         [{ oxmultilang ident="WITH_LOVE" }]<br>
