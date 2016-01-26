@@ -1,7 +1,7 @@
-<table>
+<table class="btn-primary" cellpadding="0" cellspacing="0" border="0">
     <tr>
-        <td class="padding">
-            <p><a href="[{$url}]" class="btn-primary">[{$text}]</a></p>
+        <td>
+            <a href="[{$url}]">[{$text}]</a>
         </td>
     </tr>
 </table>

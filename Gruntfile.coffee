@@ -14,7 +14,8 @@ module.exports = (grunt) ->
     autoprefixer:
       dev:
         options:
-          browsers: [ '> 1%', 'last 4 versions', 'ie 8', 'ie 9']
+          browsers: [ '> 0.1%', 'last 10 versions', 'ie 6', 'ie 7', 'ie 8', 'ie 9']
+          diff: true
         src: [ 'email/dest/css/styles.css' ]
     watch:
       css:
