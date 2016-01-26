@@ -7,4 +7,6 @@ $aLang = array(
   'ORDER_EMAIL_TOTAL' => 'Gesamt',
   'ORDER_OWNER_NEWORDER' => 'Neue Bestellung',
   'EMAIL_SENDDOWNLOADS_TITLE' => 'Ihre Downloadlinks',
+  'MESSAGE_STOCK_LOW_TITLE' => 'Lagerbestand niedrig',
+  'MESSAGE_STOCK_LOW' => 'Die eingestellte Lagerbestandsgrenze für diesen Artikel wurde erreicht.',
   );
