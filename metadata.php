@@ -24,7 +24,7 @@ $aModule = array(
         'oxarticle' => 'responsive_email/core/oxarticle_ext',
         ),
     'settings'     => array(
-        array('group' => 'responsive_email_config', 'name' => 'showRatingLinks', 'type' => 'bool',  'value' => false, 'position' => 1),
+        array('group' => 'responsive_email_config', 'name' => 'showEmailRatingLinks', 'type' => 'bool',  'value' => true, 'position' => 1),
         array('group' => 'responsive_email_config', 'name' => 'disablePlainEmails', 'type' => 'bool',  'value' => false, 'position' => 2),
         ),
     'templates' => array(

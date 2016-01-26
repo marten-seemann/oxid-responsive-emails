@@ -1,7 +1,7 @@
 [{ assign var="shop"      value=$oEmailView->getShop() }]
 [{ assign var="oViewConf" value=$oEmailView->getViewConfig() }]
 
-[{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showRatingLinks")}]
+[{assign var="showReviewLink" value=$oViewConf->getResponsiveEmailConfig("showEmailRatingLinks")}]
 
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
