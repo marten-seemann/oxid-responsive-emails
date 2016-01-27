@@ -8,7 +8,7 @@
 <h1>[{ oxmultilang ident="EMAIL_SENDDOWNLOADS_TITLE"}]</h1>
 
 [{block name="email_html_senddownloadlinks_oxordernr"}]
-    <div id="order-nr">
+    <div class="order-nr">
         [{ oxmultilang ident="ORDER_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxordernr->value }]
     </div>
     <br>

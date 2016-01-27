@@ -21,10 +21,10 @@
     <br>
 [{/block}]
 
-<div id="order-nr">[{oxmultilang ident="ORDER_NUMBER" suffix="COLON"}] [{ $order->oxorder__oxordernr->value }]</div>
+<div class="order-nr">[{oxmultilang ident="ORDER_NUMBER" suffix="COLON"}] [{ $order->oxorder__oxordernr->value }]</div>
 <br>
 
-<table id="order" class="products" border="0" cellpadding="0" cellspacing="0">
+<table id="order" class="products" cellpadding="0" cellspacing="0">
     <tr>
         <td class="picture-col">&nbsp;</td>
         <td class="product-col">
@@ -76,10 +76,10 @@
     </tr>
 </table>
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table class="order-summary-wrapper" border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td align="right">
-            <table id="order-summary" border="0" cellpadding="0" cellspacing="0">
+            <table class="order-summary" border="0" cellpadding="0" cellspacing="0">
                 [{if !$basket->getDiscounts()}]
                     [{block name="email_html_order_owner_nodiscounttotalnet"}]
                         <!-- netto price -->

@@ -72,14 +72,9 @@ addr {
   }
 }
 
-
-table.products td, table.products td p, table.products td ul {
-  font-size: 13px;
-}
-
-#order-nr {
+.order-nr {
   margin-top: 5px;
-  width: 100%;
+  width: 100% !important;
   text-align: right;
 }
 
@@ -93,12 +88,8 @@ table.products {
   width: 100%;
 
   th, td {
-    padding: 1px;
-  }
-
-  tr td {
-    border-bottom: 1px solid #ddd;
     padding: 2px;
+    border-bottom: 1px solid #dddddd;
   }
 
   ul {
@@ -146,9 +137,13 @@ table.products {
   }
 }
 
+table.order-summary-wrapper {
+  width: 100% !important; // Gmail fix
+}
 
-#order-summary {
+table.order-summary {
   width: 270px;
+  float: right; // Gmail fix
 
   th, td {
     padding: 2px;

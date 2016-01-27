@@ -37,13 +37,13 @@
 [{/block}]
 
 [{block name="email_html_ordershipped_oxordernr"}]
-    <div id="order-nr">
+    <div class="order-nr">
         [{ oxmultilang ident="ORDER_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxordernr->value }]
     </div>
     <br>
 [{/block}]
 
-<table id="order" class="products" border="0" cellpadding="0" cellspacing="0">
+<table id="order" class="products" cellpadding="0" cellspacing="0">
     <tr>
         <td class="picture-col">&nbsp;</td>
         <td class="product-col">
