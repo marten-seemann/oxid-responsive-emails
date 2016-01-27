@@ -1,5 +1,5 @@
 <?php
-class oxarticle_ext extends oxarticle_ext_parent {
+class oxarticle_respemail_ext extends oxarticle_respemail_ext_parent {
   /**
   * calculate the width for product picture thumbnails
   *

@@ -1,5 +1,5 @@
 <?php
-class oxconfig_ext extends oxconfig_ext_parent {
+class oxconfig_respemail_ext extends oxconfig_respemail_ext_parent {
   // workaround for some emails to be sent to the shop owner, where in oxemail the path is requested in a strange way
   public function getTemplatePath($sFile, $blAdmin) {
     require(dirname(__FILE__)."/../inc/paths.php");

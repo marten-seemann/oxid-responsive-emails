@@ -1,5 +1,5 @@
 <?php
-class oxemail_ext extends oxemail_ext_parent {
+class oxemail_respemail_ext extends oxemail_respemail_ext_parent {
   public function __construct() {
     parent::__construct();
     require(dirname(__FILE__)."/../inc/paths.php");

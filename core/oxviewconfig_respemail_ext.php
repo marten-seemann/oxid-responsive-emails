@@ -1,5 +1,5 @@
 <?php
-class oxviewconfig_ext extends oxviewconfig_ext_parent {
+class oxviewconfig_respemail_ext extends oxviewconfig_respemail_ext_parent {
   public function getResponsiveEmailConfig($name) {
     return oxRegistry::getConfig()->getConfigParam($name);
   }

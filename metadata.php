@@ -17,11 +17,11 @@ $aModule = array(
         // array("template" => "layout/sidebar.tpl", "block" => "sidebar_categoriestree", "file" => "sidebar.tpl"),
         ),
     'extend' => array(
-        'oxemail' => 'responsive_email/core/oxemail_ext',
-        'oxconfig' => 'responsive_email/core/oxconfig_ext',
-        'oxutilsview' => 'responsive_email/core/oxutilsview_ext',
-        'oxviewconfig' => 'responsive_email/core/oxviewconfig_ext',
-        'oxarticle' => 'responsive_email/core/oxarticle_ext',
+        'oxarticle' => 'responsive_email/core/oxarticle_respemail_ext',
+        'oxemail' => 'responsive_email/core/oxemail_respemail_ext',
+        'oxconfig' => 'responsive_email/core/oxconfig_respemail_ext',
+        'oxutilsview' => 'responsive_email/core/oxutilsview_respemail_ext',
+        'oxviewconfig' => 'responsive_email/core/oxviewconfig_respemail_ext',
         ),
     'settings'     => array(
         array('group' => 'responsive_email_config', 'name' => 'showEmailRatingLinks', 'type' => 'bool',  'value' => true, 'position' => 1),

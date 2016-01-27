@@ -1,5 +1,5 @@
 <?php
-class oxutilsview_ext extends oxutilsview_ext_parent {
+class oxutilsview_respemail_ext extends oxutilsview_respemail_ext_parent {
   /**
   * make sure that module block replacements can be applied to .tpl-files defined in this module
   *
