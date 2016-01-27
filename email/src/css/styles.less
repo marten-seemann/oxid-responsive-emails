@@ -3,7 +3,8 @@
 @base-font-size: 15px;
 @font-size-small: 13px;
 
-* {
+// overwrite font size settings done in general.less
+*, p, ol, ul, .btn-primary td {
   font-size: @base-font-size;
 }
 
@@ -80,7 +81,6 @@ table.products td, table.products td p, table.products td ul {
   margin-top: 5px;
   width: 100%;
   text-align: right;
-  font-size: 15px;
 }
 
 table.suggest {
@@ -124,6 +124,9 @@ table.products {
   .product-details {
     color: #444;
 
+    &, * {
+      font-size: @font-size-small;
+    }
   }
 
   .product-artnum {
