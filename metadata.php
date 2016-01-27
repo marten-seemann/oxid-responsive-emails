@@ -27,6 +27,7 @@ $aModule = array(
         array('group' => 'responsive_email_config', 'name' => 'showEmailRatingLinks', 'type' => 'bool',  'value' => true, 'position' => 1),
         array('group' => 'responsive_email_config', 'name' => 'disablePlainEmails', 'type' => 'bool',  'value' => false, 'position' => 2),
         array('group' => 'responsive_email_config', 'name' => 'respEmailLogoFileName', 'type' => 'str',  'value' => 'logo_email.png', 'position' => 3),
+        array('group' => 'responsive_email_config', 'name' => 'respEmailLogoWidth', 'type' => 'str',  'value' => '250', 'position' => 4),
         ),
     'templates' => array(
         ),

@@ -11,4 +11,6 @@ $aLang = array(
   'HELP_SHOP_MODULE_disablePlainEmails' => 'By default, OXID sends a plain text version of the mails in addition to the HTML version. Those two versions have to be modified separately. Here you can disable the plain version completely.',
   'SHOP_MODULE_respEmailLogoFileName' => 'File name of the logo',
   'HELP_SHOP_MODULE_respEmailLogoFileName' => 'The file must be placed in the directory <em>out/&lt;THEME&gt;/img/</em>.',
+  'SHOP_MODULE_respEmailLogoWidth' => 'width of the logo (in px)',
+  'HELP_SHOP_MODULE_respEmailLogoWidth' => 'In order to make the logo look sharp on high resolution displays, the actual width of the logo should be twice the value set here.',
   );
