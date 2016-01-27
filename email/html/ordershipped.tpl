@@ -58,15 +58,16 @@
                     <img src="[{$basketproduct->getThumbnailUrl(false) }]" border="0" hspace="0" vspace="0" alt="[{$oOrderArticle->oxorderarticles__oxtitle->value|strip_tags}]" align="texttop">
                 </td>
                 <td class="product-col">
-                    <p>
-                        [{assign var="amount" value=$oOrderArticle->oxorderarticles__oxamount->value }]
-                        [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
-                        [{ $oOrderArticle->oxorderarticles__oxtitle->value }] [{ $oOrderArticle->oxorderarticles__oxselvariant->value }]
-                        <div class="product-details">
-                            [{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oOrderArticle->oxorderarticles__oxartnum->value }]<br>
-                            <a href="[{ $oViewConf->getBaseDir() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{ $oOrderArticle->oxorderarticles__oxartid->value }]&amp;cl=review&amp;reviewuserhash=[{$reviewuserhash}]" target="_blank">[{ oxmultilang ident="REVIEW" }]</a>
-                        </div>
-                    </p>
+                    [{assign var="amount" value=$oOrderArticle->oxorderarticles__oxamount->value }]
+                    [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
+
+                    <div class="product-title">[{ $oOrderArticle->oxorderarticles__oxtitle->value }] [{ $oOrderArticle->oxorderarticles__oxselvariant->value }]</div>
+
+                    <div class="product-details">
+                        <div class="product-artnum">[{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oOrderArticle->oxorderarticles__oxartnum->value }]</div>
+
+                        <a href="[{ $oViewConf->getBaseDir() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{ $oOrderArticle->oxorderarticles__oxartid->value }]&amp;cl=review&amp;reviewuserhash=[{$reviewuserhash}]" target="_blank">[{ oxmultilang ident="REVIEW" }]</a>
+                    </div>
                 </td>
             </tr>
         [{/foreach}]

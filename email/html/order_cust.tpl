@@ -39,7 +39,6 @@
     </tr>
 
     [{assign var="basketitemlist" value=$basket->getBasketArticles() }]
-
     [{foreach key=basketindex from=$basket->getContents() item=basketitem}]
         [{block name="email_html_order_cust_basketitem"}]
             [{assign var="basketproduct" value=$basketitemlist.$basketindex }]
@@ -48,47 +47,17 @@
                     <img src="[{$basketproduct->getThumbnailUrl(false)}]" alt="[{$basketitem->getTitle()|strip_tags}]" width="[{$basketproduct->getResponsiveEmailThumbnailSize()}]">
                 </td>
                 <td class="product-col">
-                    <p>
-                        [{assign var="amount" value=$basketitem->getAmount()}]
-                        [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
-                        [{$basketitem->getTitle()}]
+                    [{assign var="amount" value=$basketitem->getAmount()}]
+                    [{if $amount > 1}]<b>[{$amount}]x</b>&nbsp;[{/if}]
 
-                        <div class="product-details">
-                            <p>[{oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $basketproduct->oxarticles__oxartnum->value }]</p>
-                            [{if $basketitem->getChosenSelList() }]
-                                <ul>
-                                    [{foreach from=$basketitem->getChosenSelList() item=oList}]
-                                        <li>[{ $oList->name }] [{ $oList->value }]</li>
-                                    [{/foreach}]
-                                </ul>
-                            [{/if}]
-                            [{if $basketitem->getPersParams() }]
-                                <ul>
-                                    [{foreach key=sVar from=$basketitem->getPersParams() item=aParam}]
-                                        <li>[{$sVar}]: [{$aParam}]</li>
-                                    [{/foreach}]
-                                </ul>
-                            [{/if}]
+                    <div class="product-title">[{$basketitem->getTitle()}]</div>
 
-                            [{if $oViewConf->getShowGiftWrapping() }]
-                                [{assign var="oWrapping" value=$basketitem->getWrapping() }]
-                                [{if !!$basketitem->getWrappingId() }]
-                                    <p>
-                                        [{oxmultilang ident="GIFT_WRAPPING" suffix="COLON"}]
-                                        [{if !$basketitem->getWrappingId() }]
-                                            [{oxmultilang ident="NONE" }]
-                                        [{else}]
-                                            [{$oWrapping->oxwrapping__oxname->value}]
-                                        [{/if}]
-                                    </p>
-                                [{/if}]
-                            [{/if}]
-
-                            [{if $showReviewLink && $blShowReviewLink}]
-                                <a href="[{ $oConf->getShopURL() }]index.php?shp=[{$shop->oxshops__oxid->value}]&amp;anid=[{$basketitem->getProductId()}]&amp;cl=review&amp;reviewuserhash=[{$user->getReviewUserHash($user->getId())}]" target="_blank" class="review-link">[{oxmultilang ident="REVIEW" }]</a>
-                            [{/if}]
-                        </div>
-                    </p>
+                    [{if $showReviewLink && $blShowReviewLink}]
+                        [{assign var="showReview" value=true}]
+                    [{else}]
+                        [{assign var="showReview" value=false}]
+                    [{/if}]
+                    [{include file=$oViewConf->getTemplatePath("inc/order_product_details.tpl") basketitem=$basketitem basketproduct=$basketproduct showReview=$showReview}]
                 </td>
 
                 <td class="price">
@@ -99,56 +68,23 @@
     [{/foreach}]
 
     [{block name="email_html_order_cust_giftwrapping"}]
-        [{if $oViewConf->getShowGiftWrapping() && $basket->getCard() }]
-            [{assign var="oCard" value=$basket->getCard() }]
-                <tr>
-                    <td class="picture-col">
-                        <img src="[{$oCard->getPictureUrl()}]" alt="[{$oCard->oxwrapping__oxname->value}]">
-                    </td>
-                    <td colspan="2">
-                        [{oxmultilang ident="YOUR_GREETING_CARD" suffix="COLON" }]<br>
-                        <p id="greeting-card-message">[{$basket->getCardMessage()}]</p>
-                    </td>
-                </tr>
-        [{/if}]
+        [{include file=$oViewConf->getTemplatePath("inc/order_greeting_card.tpl") basket=$basket}]
     [{/block}]
 </table>
 <br>
 
 
-<table id="vouchers" border="0" cellpadding="0" cellspacing="0" >
+<table id="vouchers" border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td>
             [{block name="email_html_order_cust_voucherdiscount_top"}]
-                <table border="0" cellpadding="0" cellspacing="0" >
-                    [{if $oViewConf->getShowVouchers() && $basket->getVoucherDiscValue() }]
-                        <tr>
-                            <td>
-                                <b>[{oxmultilang ident="USED_COUPONS_2" }]</b>
-                            </td>
-                            <td>
-                                <b>[{oxmultilang ident="REBATE" }]</b>
-                            </td>
-                        </tr>
-                        [{foreach from=$order->getVoucherList() item=voucher}]
-                            [{assign var="voucherseries" value=$voucher->getSerie() }]
-                            <tr>
-                                <td>
-                                    [{$voucher->oxvouchers__oxvouchernr->value}]
-                                </td>
-                                <td>
-                                    [{$voucherseries->oxvoucherseries__oxdiscount->value}] [{if $voucherseries->oxvoucherseries__oxdiscounttype->value == "absolute"}][{ $currency->sign}][{else}]%[{/if}]
-                                </td>
-                            </tr>
-                        [{/foreach}]
-                    [{/if}]
-                </table>
+                [{include file=$oViewConf->getTemplatePath("inc/order_vouchers.tpl") order=$order basket=$basket}]
             [{/block}]
         </td>
     </tr>
 </table>
 
-<table border="0" cellpadding="0" cellspacing="0" >
+<table border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td align="right">
             <table id="order-summary" border="0" cellpadding="0" cellspacing="0">
@@ -440,6 +376,7 @@
                             [{/if}]
                         [{/if}]
                     [{/block}]
+
                     [{block name="email_html_order_cust_giftwrapping"}]
                         <!-- Greeting card -->
                         [{assign var="giftCardCost" value=$basket->getGiftCardCost()}]
@@ -499,12 +436,8 @@
 
 [{block name="email_html_order_cust_userremark"}]
     [{if $order->oxorder__oxremark->value }]
-        <h3>
-            [{oxmultilang ident="WHAT_I_WANTED_TO_SAY" }]
-        </h3>
-        <p>
-            [{ $order->oxorder__oxremark->value|oxescape }]
-        </p>
+        <h3>[{oxmultilang ident="WHAT_I_WANTED_TO_SAY" }]</h3>
+        <p>[{ $order->oxorder__oxremark->value|oxescape }]</p>
     [{/if}]
 [{/block}]
 
@@ -540,61 +473,11 @@
 [{/block}]
 
 [{block name="email_html_order_cust_username"}]
-    <h3>
-        [{oxmultilang ident="EMAIL_ADDRESS" suffix="COLON" }]
-    </h3>
-    <p>
-         [{ $user->oxuser__oxusername->value }]
-    </p>
+    [{include file=$oViewConf->getTemplatePath("inc/order_username.tpl") order=$user}]
 [{/block}]
 
 [{block name="email_html_order_cust_address"}]
-    <!-- Address info -->
-    <h3>
-        [{oxmultilang ident="ADDRESS" suffix="COLON" }]
-    </h3>
-
-    <table id="order-address" border="0" cellpadding="0" cellspacing="0" >
-        <tr>
-            <td style="padding-right: 30px">
-                <h4>
-                    [{oxmultilang ident="BILLING_ADDRESS" suffix="COLON" }]
-                </h4>
-                <p>
-                    [{ assign var="company" value=$order->oxorder__oxbillcompany->value }]
-                    [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
-                    [{ $order->oxorder__oxbillsal->value|oxmultilangsal}] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }]<br>
-                    [{if $order->oxorder__oxbilladdinfo->value }][{ $order->oxorder__oxbilladdinfo->value }]<br>[{/if}]
-                    [{ $order->oxorder__oxbillstreet->value }] [{ $order->oxorder__oxbillstreetnr->value }]<br>
-                    [{ $order->oxorder__oxbillstateid->value }]
-                    [{ $order->oxorder__oxbillzip->value }] [{ $order->oxorder__oxbillcity->value }]<br>
-                    [{ $order->oxorder__oxbillcountry->value }]<br>
-                    [{if $order->oxorder__oxbillustid->value}][{oxmultilang ident="VAT_ID_NUMBER" suffix="COLON" }] [{ $order->oxorder__oxbillustid->value }]<br>[{/if}]
-                    [{assign var="phone" value=$order->oxorder__oxbillfon->value}]
-                    [{ if strlen($phone) > 0}]
-                        [{oxmultilang ident="PHONE" suffix="COLON" }] [{ $phone }]<br>
-                    [{/if}]
-                </p>
-            </td>
-            [{if $order->oxorder__oxdellname->value }]
-                <td>
-                    <h4>
-                        [{oxmultilang ident="SHIPPING_ADDRESS" suffix="COLON" }]
-                    </h4>
-                    <p>
-                        [{ assign var="company" value=$order->oxorder__oxdelcompany->value }]
-                        [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
-                        [{ $order->oxorder__oxdelsal->value|oxmultilangsal }] [{ $order->oxorder__oxdelfname->value }] [{ $order->oxorder__oxdellname->value }]<br>
-                        [{if $order->oxorder__oxdeladdinfo->value }][{ $order->oxorder__oxdeladdinfo->value }]<br>[{/if}]
-                        [{ $order->oxorder__oxdelstreet->value }] [{ $order->oxorder__oxdelstreetnr->value }]<br>
-                        [{ $order->oxorder__oxdelstateid->value }]
-                        [{ $order->oxorder__oxdelzip->value }] [{ $order->oxorder__oxdelcity->value }]<br>
-                        [{ $order->oxorder__oxdelcountry->value }]
-                    </p>
-                </td>
-            [{/if}]
-        </tr>
-    </table>
+    [{include file=$oViewConf->getTemplatePath("inc/order_addresses.tpl") order=$order}]
 [{/block}]
 
 [{block name="email_html_order_cust_deliveryinfo"}]
