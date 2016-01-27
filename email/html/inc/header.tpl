@@ -17,5 +17,6 @@
         <tr>
           <td>
             <div class="logo">
-                <img src="[{$oViewConf->getImageUrl('logo_email.png', false)}]" border="0" hspace="0" vspace="0" alt="[{ $shop->oxshops__oxname->value }]" align="texttop">
+                [{assign var="logo" value=$oViewConf->getResponsiveEmailConfig("respEmailLogoFileName")}]
+                <img src="[{$oViewConf->getImageUrl($logo, false)}]" border="0" hspace="0" vspace="0" alt="[{ $shop->oxshops__oxname->value }]" align="texttop" width="[{$oViewConf->getResponsiveEmailConfig("respEmailLogoWidth")}]" style="width: auto; max-width: [{$oViewConf->getResponsiveEmailConfig("respEmailLogowidth")}];px">
             </div>
