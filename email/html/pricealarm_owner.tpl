@@ -5,6 +5,6 @@
 
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
-    [{ oxcontent ident="oxpricealarmemail" }]
+[{ oxcontent ident="oxpricealarmemail" }]
 
 [{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

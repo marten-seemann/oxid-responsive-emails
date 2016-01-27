@@ -4,6 +4,6 @@
 
 [{include file=$oViewConf->getTemplatePath("inc/header.tpl") title=$shop->oxshops__oxname->value}]
 
-    [{ oxcontent ident=$contentident|default:"oxregisteremail" }]
+[{ oxcontent ident=$contentident|default:"oxregisteremail" }]
 
 [{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]

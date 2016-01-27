@@ -22,27 +22,27 @@
         </td>
     </tr>
     [{foreach from=$articles item=oProduct}]
-    <tr valign="top">
-        <td class="picture-col">
-            <img src="[{$oProduct->getThumbnailUrl(false)}]" alt="[{ $oProduct->oxarticles__oxtitle->value|strip_tags }]" width="[{$oProduct->getResponsiveEmailThumbnailSize()}]">
-        </td>
-        <td class="product-col">
-            <b>[{ $oProduct->oxarticles__oxtitle->value }][{ if $oProduct->oxarticles__oxvarselect->value}], [{ $oProduct->oxarticles__oxvarselect->value}][{/if}]</b>
-            <div class="product-details">
-                [{ if $chosen_selectlist }]
-                    ,
-                    [{foreach from=$chosen_selectlist item=oList}]
-                        [{ $oList->name }] [{ $oList->value }]&nbsp;
-                    [{/foreach}]
-                    <br>
-                [{/if}]
-                [{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oProduct->oxarticles__oxartnum->value }]
-            </div>
-        </td>
-        <td class="price">
-            [{$oProduct->oxarticles__oxstock->value}] ([{$oProduct->oxarticles__oxremindamount->value}])
-        </td>
-    </tr>
+        <tr valign="top">
+            <td class="picture-col">
+                <img src="[{$oProduct->getThumbnailUrl(false)}]" alt="[{ $oProduct->oxarticles__oxtitle->value|strip_tags }]" width="[{$oProduct->getResponsiveEmailThumbnailSize()}]">
+            </td>
+            <td class="product-col">
+                <b>[{ $oProduct->oxarticles__oxtitle->value }][{ if $oProduct->oxarticles__oxvarselect->value}], [{ $oProduct->oxarticles__oxvarselect->value}][{/if}]</b>
+                <div class="product-details">
+                    [{ if $chosen_selectlist }]
+                        ,
+                        [{foreach from=$chosen_selectlist item=oList}]
+                            [{ $oList->name }] [{ $oList->value }]&nbsp;
+                        [{/foreach}]
+                        <br>
+                    [{/if}]
+                    [{ oxmultilang ident="PRODUCT_NO" suffix="COLON" }] [{ $oProduct->oxarticles__oxartnum->value }]
+                </div>
+            </td>
+            <td class="price">
+                [{$oProduct->oxarticles__oxstock->value}] ([{$oProduct->oxarticles__oxremindamount->value}])
+            </td>
+        </tr>
     [{/foreach}]
 </table>
 
