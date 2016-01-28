@@ -1,10 +1,10 @@
-<table border="0" cellspacing="0" cellpadding="0">
+<table class="vouchers" border="0" cellspacing="0" cellpadding="0">
     [{if $oViewConf->getShowVouchers() && $basket->getVoucherDiscValue() }]
-        <tr>
-            <td>
-                <b>[{oxmultilang ident="USED_COUPONS_2" }]</b>
+        <tr class="heading">
+            <td class="voucher-col">
+                <b>[{oxmultilang ident="EMAIL_USED_COUPONS" }]</b>
             </td>
-            <td>
+            <td class="rebate-col">
                 <b>[{oxmultilang ident="REBATE" }]</b>
             </td>
         </tr>

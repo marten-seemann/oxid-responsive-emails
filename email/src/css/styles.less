@@ -2,6 +2,7 @@
 
 @base-font-size: 15px;
 @font-size-small: 13px;
+@border-color: #DDDDDD;
 
 // overwrite font size settings done in general.less
 *, p, ol, ul, .btn-primary td {
@@ -89,7 +90,7 @@ table.products {
 
   th, td {
     padding: 2px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid @border-color;
   }
 
   ul {
@@ -156,18 +157,31 @@ table.order-summary {
   }
 }
 
-#vouchers {
-  margin-bottom: 5px;
-  width: 220px;
+table.vouchers-wrapper {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+table.vouchers {
+  tr.heading {
+    th, td {
+      border-bottom: 1px solid @border-color;
+    }
+  }
 
   th, td {
-    padding: 2px 1px;
+    padding: 2px;
+  }
+
+  .voucher-col {
+    padding-right: 10px;
   }
 }
 
 #grand-total {
   th, td {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid @border-color;
   }
 }
 

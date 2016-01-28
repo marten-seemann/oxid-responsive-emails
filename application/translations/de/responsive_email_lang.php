@@ -9,4 +9,5 @@ $aLang = array(
   'EMAIL_SENDDOWNLOADS_TITLE' => 'Ihre Downloadlinks',
   'MESSAGE_STOCK_LOW_TITLE' => 'Lagerbestand niedrig',
   'MESSAGE_STOCK_LOW' => 'Die eingestellte Lagerbestandsgrenze für diesen Artikel wurde erreicht.',
+  'EMAIL_USED_COUPONS' => 'Benutzte Gutscheine',
   );

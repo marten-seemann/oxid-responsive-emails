@@ -63,18 +63,20 @@
         [{include file=$oViewConf->getTemplatePath("inc/order_greeting_card.tpl") basket=$basket}]
     [{/block}]
 </table>
-<br>
 
 
-<table id="vouchers" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-        <td>
-            [{block name="email_html_order_owner_voucherdiscount_top"}]
-                [{include file=$oViewConf->getTemplatePath("inc/order_vouchers.tpl") order=$order basket=$basket}]
-            [{/block}]
-        </td>
-    </tr>
-</table>
+[{if $oViewConf->getShowVouchers() && $basket->getVoucherDiscValue() }]
+    <table class="vouchers-wrapper" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                [{block name="email_html_order_owner_voucherdiscount_top"}]
+                    [{include file=$oViewConf->getTemplatePath("inc/order_vouchers.tpl") order=$order basket=$basket}]
+                [{/block}]
+            </td>
+        </tr>
+    </table>
+[{/if}]
+
 
 <table class="order-summary-wrapper" border="0" cellpadding="0" cellspacing="0">
     <tr>

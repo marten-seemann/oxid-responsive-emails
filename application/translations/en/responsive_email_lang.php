@@ -9,4 +9,5 @@ $aLang = array(
   'EMAIL_SENDDOWNLOADS_TITLE' => 'Your download links',
   'MESSAGE_STOCK_LOW_TITLE' => 'Stock low',
   'MESSAGE_STOCK_LOW' => 'The specified stock limit for this product has been reached.',
+  'EMAIL_USED_COUPONS' => 'Used coupons',
   );
