@@ -1,3 +1,3 @@
 #!/bin/bash
-COMMENT="License for ..."
-PASSPHRASE="xm9r7HAsTRUgv.PKaFGJtyC,!UsshoTjUzC8Nv2drQszpnVoEtT!pcdEQ<912QqHZLTt"
+COMMENT="License for Responsive Emails"
+PASSPHRASE="YvJ]mpiJHZoudsaf134&ViryhvC>YDGdfsaaJmtkyoFmjJZPWwxfIk4PnROLaS"

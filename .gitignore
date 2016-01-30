@@ -1,5 +1,13 @@
+build/package/
 build/encoder/encrypted*
 build/productive
+build/responsive_email*/
+build/responsive_email*.zip
+
+build/upload.sh
 build/tmp
+/email/dest/
+/modified/email/html/*.tpl
+/modified/email/html/*/*.tpl
 /node_modules/
 /vendor/

@@ -1,18 +1,18 @@
 #!/bin/bash
-IONCUBE_PATH="/Users/marten/bin/ioncube"
-# ENCODERS[0]="ioncube_encoder5"
-# ENCODERS[1]="ioncube_encoder5_7.0"
-ENCODERS[0]="ioncube_encoder53"
-ENCODERS[1]="ioncube_encoder53_7.0"
-ENCODERS[2]="ioncube_encoder54"
+# This script should NOT be called manually.
 
-# TARGETS[0]="encrypted_5"
-# TARGETS[1]="encrypted_5_7.0"
+SOURCEPATH=$1
+
+IONCUBE_PATH="$HOME/bin/ioncube"
+ENCODERS[0]="ioncube_encoder53"
+ENCODERS[1]="ioncube_encoder55"
+
 TARGETS[0]="encrypted_53"
-TARGETS[1]="encrypted_53_7.0"
-TARGETS[2]="encrypted_54"
+TARGETS[1]="encrypted_55"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" #directory of the current script
+
+SOURCECOMMENT="Copyright Marten Seemann, 2016"
 
 source $DIR/encoder_config.sh
 
@@ -28,15 +28,21 @@ do
   rm -rf $TARGET
   mkdir $TARGET
 
-  $ENCODER $DIR/../productive/* \
+  $ENCODER $SOURCEPATH/* \
     --into $TARGET \
     --replace-target \
     --no-doc-comments \
-    --add-comment "Copyright Marten Seemann, 2013" \
-    --copy "csstoinline/*.php" \
-    --copy "out/admin/*/*lang.php" \
+    --add-comment "$SOURCECOMMENT" \
+    --ignore "metadata.php" \
+    --copy "inc/paths.php" \
+    --copy "application/translations/*/*lang.php" \
     --with-license "license.txt" \
     --passphrase $PASSPHRASE
-done
 
-wait
+  $ENCODER $SOURCEPATH/copy_this/metadata.php \
+    --into $TARGET/copy_this/ \
+    --merge-target \
+    --no-doc-comments \
+    --add-comment "$SOURCECOMMENT" \
+    --passphrase $PASSPHRASE
+done
