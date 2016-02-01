@@ -11,10 +11,10 @@
         [{foreach from=$order->getVoucherList() item=voucher}]
             [{assign var="voucherseries" value=$voucher->getSerie() }]
             <tr>
-                <td>
+                <td class="voucher-col">
                     [{$voucher->oxvouchers__oxvouchernr->value}]
                 </td>
-                <td>
+                <td class="rebate-col">
                     [{$voucherseries->oxvoucherseries__oxdiscount->value}] [{if $voucherseries->oxvoucherseries__oxdiscounttype->value == "absolute"}][{ $currency->sign}][{else}]%[{/if}]
                 </td>
             </tr>
