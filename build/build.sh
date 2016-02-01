@@ -1,4 +1,5 @@
 #!/bin/bash
+PHP="/usr/local/bin/php"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" #directory of the current script
 
 cd build
@@ -17,6 +18,9 @@ npm install
 grunt
 
 mv build/sql .
+
+echo "Getting (empty) CMS snippets..."
+$PHP build/get_snippets.php > sql/snippets.sql
 
 rm -rf .git .gitignore composer.json composer.lock Gruntfile.coffee node_modules package.json
 rm -rf email/src email/dest/css/*.diff

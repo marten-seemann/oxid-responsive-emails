@@ -21,6 +21,9 @@
             [{oxcontent ident="oxuserorderemail"}]
         [{/if}]
     </p>
+
+    [{ $oViewConf->getSnippet("email_order_cust_orderemail") }]
+
     <br>
 [{/block}]
 
@@ -434,6 +437,9 @@
     </tr>
 </table>
 
+[{ $oViewConf->getSnippet("email_order_cust_basket") }]
+
+
 [{block name="email_html_order_cust_userremark"}]
     [{if $order->oxorder__oxremark->value }]
         <h3>[{oxmultilang ident="WHAT_I_WANTED_TO_SAY" }]</h3>
@@ -470,14 +476,20 @@
             [{if $oPaymentCostPrice }]([{oxprice price=$oPaymentCostPrice->getBruttoPrice() currency=$currency}])[{/if}]
         </p>
     [{/if}]
+
+    [{ $oViewConf->getSnippet("email_order_cust_payment") }]
 [{/block}]
 
 [{block name="email_html_order_cust_username"}]
     [{include file=$oViewConf->getTemplatePath("inc/order_username.tpl") order=$user}]
+
+    [{ $oViewConf->getSnippet("email_order_cust_username") }]
 [{/block}]
 
 [{block name="email_html_order_cust_address"}]
     [{include file=$oViewConf->getTemplatePath("inc/order_addresses.tpl") order=$order}]
+
+    [{ $oViewConf->getSnippet("email_order_cust_address") }]
 [{/block}]
 
 [{block name="email_html_order_cust_deliveryinfo"}]
@@ -488,6 +500,9 @@
         <p>
             [{ $order->oDelSet->oxdeliveryset__oxtitle->value }]
         </p>
+
+        [{ $oViewConf->getSnippet("email_order_cust_shipping") }]
+
     [{/if}]
 [{/block}]
 

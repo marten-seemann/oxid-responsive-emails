@@ -5,6 +5,21 @@ class oxviewconfig_respemail_ext extends oxviewconfig_respemail_ext_parent {
   }
 
   /**
+  * return a CMS snippet. If it doesn't exist, return an empty string
+  *
+  * @param $sIdent string the ident of the snippet
+  * @return string the snippet
+  */
+  public function getSnippet($sIdent) {
+    $oCont = oxNew("oxcontent");
+    $blLoaded = $oCont->loadByIdent($sIdent);
+    if($blLoaded AND $oCont->oxcontents__oxactive->value) {
+      return $oCont->oxcontents__oxcontent->value;
+    }
+    else return "";
+  }
+
+  /**
   * get the path to the folder containing the tpl and css files for the emails
   * @return string the path
   */
