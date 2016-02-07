@@ -15,6 +15,8 @@
     </h3>
 [{/block}]
 
+[{ $oViewConf->getSnippet("email_order_shipped_header") }]
+
 [{block name="email_html_ordershipped_address"}]
     <p>
         [{if $order->oxorder__oxdellname->value }]
@@ -33,6 +35,9 @@
           [{ $order->oxorder__oxbillzip->value }] [{ $order->oxorder__oxbillcity->value }]
         [{/if}]
     </p>
+
+    [{ $oViewConf->getSnippet("email_order_shipped_address") }]
+
     <br>
 [{/block}]
 
@@ -74,6 +79,9 @@
     [{/block}]
 </table>
 <br><br>
+
+[{ $oViewConf->getSnippet("email_order_shipped_basket") }]
+
 
 [{block name="email_html_ordershipped_infofooter"}]
     <p>[{ oxmultilang ident="YOUR_TEAM" args=$shop->oxshops__oxname->value}]</p>
