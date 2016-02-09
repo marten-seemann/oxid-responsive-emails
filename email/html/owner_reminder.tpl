@@ -21,11 +21,11 @@
             <b>[{ oxmultilang ident="TOTAL_QUANTITY" }]</b>
         </td>
     </tr>
-    
+
     [{foreach from=$articles item=oProduct}]
         <tr valign="top">
             <td class="picture-col">
-                <img src="[{$oProduct->getThumbnailUrl(false)}]" alt="[{ $oProduct->oxarticles__oxtitle->value|strip_tags }]" width="[{$oProduct->getResponsiveEmailThumbnailSize()}]">
+                <img src="[{$oProduct->getThumbnailUrl(false)}]" alt="[{ $oProduct->oxarticles__oxtitle->value|strip_tags }]" width="[{$oProduct->getResponsiveEmailImageSize()}]">
             </td>
             <td class="product-col">
                 <div class="product-title">[{ $oProduct->oxarticles__oxtitle->value }][{ if $oProduct->oxarticles__oxvarselect->value}], [{ $oProduct->oxarticles__oxvarselect->value}][{/if}]</div>

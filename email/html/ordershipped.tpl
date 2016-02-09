@@ -60,7 +60,7 @@
             <tr valign="top">
                 <td class="picture-col">
                     [{assign var="basketproduct" value=$oOrderArticle->getArticle()}]
-                    <img src="[{$basketproduct->getThumbnailUrl(false) }]" alt="[{$oOrderArticle->oxorderarticles__oxtitle->value|strip_tags}]" width="[{$basketproduct->getResponsiveEmailThumbnailSize()}]">
+                    <img src="[{$basketproduct->getThumbnailUrl(false) }]" alt="[{$oOrderArticle->oxorderarticles__oxtitle->value|strip_tags}]" width="[{$basketproduct->getResponsiveEmailImageSize()}]">
                 </td>
                 <td class="product-col">
                     [{assign var="amount" value=$oOrderArticle->oxorderarticles__oxamount->value }]

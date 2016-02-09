@@ -8,9 +8,7 @@ class oxarticle_respemail_ext extends oxarticle_respemail_ext_parent {
   *
   * @return the width
   */
-  public function getResponsiveEmailThumbnailSize() {
-    $iBaseWidth = 155;
-
+  public function getResponsiveEmailImageSize($iBaseWidth = 155) {
     $dims = $this->getMasterZoomPictureDimensions(1);
     $proportion = (float) $dims['width'] / (float) $dims['height'];
     return round($iBaseWidth * min(1, $proportion));

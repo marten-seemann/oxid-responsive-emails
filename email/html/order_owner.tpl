@@ -41,7 +41,7 @@
             [{assign var="basketproduct" value=$basketitemlist.$basketindex }]
             <tr>
                 <td class="picture-col">
-                    <img src="[{$basketproduct->getThumbnailUrl(false)}]" alt="[{$basketitem->getTitle()|strip_tags}]" width="[{$basketproduct->getResponsiveEmailThumbnailSize()}]">
+                    <img src="[{$basketproduct->getThumbnailUrl(false)}]" alt="[{$basketitem->getTitle()|strip_tags}]" width="[{$basketproduct->getResponsiveEmailImageSize()}]">
                 </td>
                 <td class="product-col">
                     [{assign var="amount" value=$basketitem->getAmount()}]
