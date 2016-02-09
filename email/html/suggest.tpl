@@ -46,12 +46,14 @@
 
 <p>[{$userInfo->send_message|oxescape|nl2br}]</p>
 
-<p>[{ oxmultilang ident="MANY_GREETINGS" }] [{$userInfo->send_name|oxescape}]</p>
+<p>[{ oxmultilang ident="MANY_GREETINGS" }]<br>[{$userInfo->send_name|oxescape}]</p>
 <br>
 
-<p>
-    <a href="[{ $sArticleUrl }]"><img src="[{$product->getPictureUrl()}]" border="0" hspace="0" vspace="0" alt="[{ $product->oxarticles__oxtitle->value|strip_tags }]"></a>
-</p>
+<div id="suggest-product">
+    <a href="[{ $sArticleUrl }]">
+      <img src="[{$product->getPictureUrl()}]" alt="[{ $product->oxarticles__oxtitle->value|strip_tags }]" width="[{$product->getResponsiveEmailImageSize(250)}]" border="0">
+    </a>
+</div>
 
 <p>
     <a href="[{ $sArticleUrl }]"><b>[{ $product->oxarticles__oxtitle->value }]</b></a>
