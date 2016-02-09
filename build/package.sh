@@ -12,6 +12,7 @@ cd package_unenc
 mkdir copy_this changed_full
 cp -r $DIR/productive/* copy_this/
 mv copy_this/modified changed_full/
+mkdir changed_full/modified/html
 mv copy_this/sql .
 cd $DIR
 
@@ -29,9 +30,10 @@ cd package
 cp -r ../encoder/encrypted_53 "PHP ab 5.3"
 cp -r ../encoder/encrypted_55 "PHP ab 5.5"
 
+echo "Adding install instructions..."
+cp $DIR/install_instruction/README.txt .
 
 echo "Compressing to $FILENAME..."
-pwd
 rm -f ../$FILENAME
 $ZIP -r -9 -q ../$FILENAME *
 cd ..
