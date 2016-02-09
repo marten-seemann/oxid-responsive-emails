@@ -13,5 +13,5 @@ echo "Reading database records..."
 $CURL $GETSQL
 
 echo "Combining into a single file..."
-cat single/*.sql > combined.sql
+cat single/*.sql > install.sql
 rm -r single
