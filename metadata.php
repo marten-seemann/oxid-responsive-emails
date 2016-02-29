@@ -8,13 +8,14 @@ $aModule = array(
     'id'           => 'responsive_email',
     'title'        => 'Responsive Emails',
     'description'  => array(
+      'de' => 'OXID-Emails, die auf allen Geräten gut aussehen',
+      'en' => 'make OXID emails look great on all devices'
         ),
     'thumbnail'    => 'picture.png',
     'version'      => '0.9',
     'author'       => 'Marten Seemann',
-    'url'          => 'http://shop.oxid-module.de',
+    'url'          => 'https://shop.oxid-responsive.com',
     'blocks'       => array(
-        // array("template" => "layout/sidebar.tpl", "block" => "sidebar_categoriestree", "file" => "sidebar.tpl"),
         ),
     'extend' => array(
         'oxarticle' => 'responsive_email/core/oxarticle_respemail_ext',
