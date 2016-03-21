@@ -1,0 +1,5 @@
+/**
+* OXID-Modul Responsive Emails
+* Copyright 2016 Marten Seemann
+* https://shop.oxid-responsive.com
+*/

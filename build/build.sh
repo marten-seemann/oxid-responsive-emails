@@ -26,5 +26,11 @@ rm -rf .git .gitignore composer.json composer.lock Gruntfile.coffee node_modules
 rm -rf email/src email/dest/css/*.diff
 rm -rf README.md backend_email/ build/
 
+for FILE in `find . -type f -name "*.php"`
+do
+  $DIR/add_license.rb $FILE $DIR/license_comment.txt > tmp.php
+  mv tmp.php $FILE
+done
+
 cd ..
 mv tmp productive
