@@ -18,21 +18,21 @@
 [{ $oViewConf->getSnippet("email_order_shipped_header") }]
 
 [{block name="email_html_ordershipped_address"}]
-    <p>
+    <p class="appleLinksBlack">
         [{if $order->oxorder__oxdellname->value }]
-          [{ assign var="company" value=$order->oxorder__oxdelcompany->value }]
-          [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
-          [{ $order->oxorder__oxdelfname->value }] [{ $order->oxorder__oxdellname->value }]<br>
-          [{ $order->oxorder__oxdelstreet->value }] [{ $order->oxorder__oxdelstreetnr->value }]<br>
-          [{ $order->oxorder__oxdelstateid->value }]
-          [{ $order->oxorder__oxdelzip->value }] [{ $order->oxorder__oxdelcity->value }]
+            [{ assign var="company" value=$order->oxorder__oxdelcompany->value }]
+            [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
+            [{ $order->oxorder__oxdelfname->value }] [{ $order->oxorder__oxdellname->value }]<br>
+            [{ $order->oxorder__oxdelstreet->value }] [{ $order->oxorder__oxdelstreetnr->value }]<br>
+            [{ $order->oxorder__oxdelstateid->value }]
+            [{ $order->oxorder__oxdelzip->value }] [{ $order->oxorder__oxdelcity->value }]
         [{else}]
-          [{ assign var="company" value=$order->oxorder__oxbillcompany->value }]
-          [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
-          [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }]<br>
-          [{ $order->oxorder__oxbillstreet->value }] [{ $order->oxorder__oxbillstreetnr->value }]<br>
-          [{ $order->oxorder__oxbillstateid->value }]
-          [{ $order->oxorder__oxbillzip->value }] [{ $order->oxorder__oxbillcity->value }]
+            [{ assign var="company" value=$order->oxorder__oxbillcompany->value }]
+            [{ if strlen($company) > 0}][{$company}]<br>[{/if}]
+            [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }]<br>
+            [{ $order->oxorder__oxbillstreet->value }] [{ $order->oxorder__oxbillstreetnr->value }]<br>
+            [{ $order->oxorder__oxbillstateid->value }]
+            [{ $order->oxorder__oxbillzip->value }] [{ $order->oxorder__oxbillcity->value }]
         [{/if}]
     </p>
 

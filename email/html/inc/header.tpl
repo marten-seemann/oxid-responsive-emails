@@ -4,6 +4,13 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>[{$title}]</title>
+    <style>
+      [{* prevent iOS from highlighting addresses *}]
+      .appleLinksBlack a {
+        color: #000000 !important;
+        text-decoration: none;
+      }
+    </style>
 </head>
 
 <body bgcolor="#f6f6f6">
