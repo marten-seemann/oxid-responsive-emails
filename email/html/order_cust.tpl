@@ -87,7 +87,7 @@
     </table>
 [{/if}]
 
-<table class="order-summary-wrapper" border="0" cellpadding="0" cellspacing="0">
+<table class="order-summary-wrapper" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td align="right">
             <table class="order-summary" border="0" cellpadding="0" cellspacing="0">
