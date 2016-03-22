@@ -12,7 +12,7 @@ $aModule = array(
       'en' => 'make OXID emails look great on all devices'
         ),
     'thumbnail'    => 'picture.png',
-    'version'      => '1.0',
+    'version'      => '1.1',
     'author'       => 'Marten Seemann',
     'url'          => 'https://shop.oxid-responsive.com',
     'blocks'       => array(
