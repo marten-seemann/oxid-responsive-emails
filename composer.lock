@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "symfony/css-selector",
-            "version": "v2.8.2",
+            "version": "v2.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "ac06d8173bd80790536c0a4a634a7d705b91f54f"
+                "reference": "07b7ced3ae0c12918477c095453ea8595000810e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/ac06d8173bd80790536c0a4a634a7d705b91f54f",
-                "reference": "ac06d8173bd80790536c0a4a634a7d705b91f54f",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/07b7ced3ae0c12918477c095453ea8595000810e",
+                "reference": "07b7ced3ae0c12918477c095453ea8595000810e",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-03 15:33:41"
+            "time": "2016-03-04 07:54:35"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
