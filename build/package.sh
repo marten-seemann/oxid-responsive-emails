@@ -13,7 +13,7 @@ cd package
 mkdir -p copy_this/$MODULEPATH changed_full/$MODULEPATH
 cp -r $DIR/productive/* copy_this/$MODULEPATH
 mv copy_this/$MODULEPATH/modified changed_full/$MODULEPATH
-mkdir changed_full/$MODULEPATH/modified/html
+mkdir changed_full/$MODULEPATH/modified/email/html
 mv copy_this/$MODULEPATH/sql .
 
 echo "Adding install instructions..."
