@@ -5,11 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>[{$title}]</title>
     <style>
-      [{* prevent iOS from highlighting addresses *}]
-      .appleLinksBlack a {
-        color: #000000 !important;
-        text-decoration: none;
-      }
+        [{* prevent iOS from highlighting addresses *}]
+        .appleLinksBlack a {
+            color: #000000 !important;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 640px) {
+            .container {
+                width: 100% !important;
+            }
+        }
     </style>
 </head>
 
@@ -19,7 +24,7 @@
 <table class="body-wrap" bgcolor="#f6f6f6" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td></td>
-        <td class="container" bgcolor="#FFFFFF">
+        <td class="container" bgcolor="#FFFFFF" width="600">
             <div class="content">
             <table>
                 <tr>

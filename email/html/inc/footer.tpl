@@ -10,7 +10,7 @@
 <table class="footer-wrap" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td></td>
-        <td class="container">
+        <td class="container" width="600">
             <div class="content">
                 <table>
                     <tr>
