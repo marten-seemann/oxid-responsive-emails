@@ -43,6 +43,9 @@ class oxemail_respemail_ext extends oxemail_respemail_ext_parent {
   * apply CSS styles by reading the CSS file and inlining all of the rules
   */
   protected function _makeOutputProcessing() {
+    if($this->isHTML()) {
+      return parent::_makeOutputProcessing();
+    }
     $body = $this->getBody();
     $css = file_get_contents(realpath($this->getViewConfig()->getResponsiveEmailPath()."/dest/css/styles.css"));
 
