@@ -1,5 +1,5 @@
 {
     "require": {
-        "tijsverkoyen/css-to-inline-styles": "^1.5"
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
     }
 }

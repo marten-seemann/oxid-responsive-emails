@@ -56,13 +56,7 @@ class oxemail_respemail_ext extends oxemail_respemail_ext_parent {
 
     require_once(dirname(__FILE__)."/../vendor/autoload.php");
     $cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
-    $cssToInlineStyles->setUseInlineStylesBlock(false);
-    $cssToInlineStyles->setStripOriginalStyleTags(false);
-    // $cssToInlineStyles->setStripOriginalStyleTags(true);
-    $cssToInlineStyles->setExcludeMediaQueries(false);
-    $cssToInlineStyles->setHTML($body);
-    $cssToInlineStyles->setCSS($css);
-    $html = $cssToInlineStyles->convert();
+    $html = $cssToInlineStyles->convert($body, $css);
     // echo $html;
     // echo highlight_string($html);
     // die;
