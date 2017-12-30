@@ -1,6 +1,6 @@
 #!/bin/bash
 PHP="/usr/local/bin/php"
-COMPOSER="/Users/marten/bin/composer"
+COMPOSER="/usr/local/bin/composer"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" #directory of the current script
 
 cd build
