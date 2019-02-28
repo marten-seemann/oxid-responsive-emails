@@ -23,7 +23,7 @@ mv build/sql .
 echo "Getting (empty) CMS snippets..."
 $PHP build/get_snippets.php > sql/snippets.sql
 
-rm -rf email/src email/dest/css/*.diff
+rm -rf email/src
 rm -rf README.md backend_email/ build/
 
 echo "Installing dependencies..."

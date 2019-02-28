@@ -11,11 +11,14 @@ module.exports = (grunt) ->
           paths: [ '/' ]
         src: [ 'email/src/css/styles.less' ]
         dest: 'email/dest/css/styles.css'
-    autoprefixer:
+    postcss:
       dev:
         options:
-          browsers: [ '> 0.1%', 'last 10 versions', 'ie 6', 'ie 7', 'ie 8', 'ie 9']
-          diff: true
+          processors: [
+            require('autoprefixer')({
+              browsers: [ '> 0.1%', 'last 10 versions', 'ie 6', 'ie 7', 'ie 8', 'ie 9']
+            })
+          ]
         src: [ 'email/dest/css/styles.css' ]
     watch:
       css:
@@ -25,4 +28,4 @@ module.exports = (grunt) ->
 
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask 'default', [ 'less', 'autoprefixer' ]
+  grunt.registerTask 'default', [ 'less', 'postcss' ]
