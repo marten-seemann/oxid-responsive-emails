@@ -26,13 +26,6 @@ $PHP build/get_snippets.php > sql/snippets.sql
 rm -rf email/src email/dest/css/*.diff
 rm -rf README.md backend_email/ build/
 
-echo "Adding license comment..."
-for FILE in `find . -type f -name "*.php"`
-do
-  $DIR/add_license.rb $FILE $DIR/license_comment.txt > tmp.php
-  mv tmp.php $FILE
-done
-
 echo "Installing dependencies..."
 $COMPOSER install
 
