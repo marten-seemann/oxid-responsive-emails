@@ -1,8 +1,10 @@
 <?php
-class oxemail_respemail_ext extends oxemail_respemail_ext_parent {
+namespace SeemannIT\ResponsiveEmailsModule\Core;
+
+class Email extends Email_parent {
   public function __construct() {
     parent::__construct();
-    require(dirname(__FILE__)."/../inc/paths.php");
+    require(dirname(__FILE__)."/../paths.php");
     $this->paths = $paths;
 
     $this->_sForgotPwdTemplate          = $this->getTemplatePath('_sForgotPwdTemplate');

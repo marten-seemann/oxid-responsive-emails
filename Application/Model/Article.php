@@ -1,5 +1,7 @@
 <?php
-class oxarticle_respemail_ext extends oxarticle_respemail_ext_parent {
+namespace SeemannIT\ResponsiveEmailsModule\Application\Model;
+
+class Article extends Article_parent {
   /**
   * calculate the width for product picture thumbnails
   *

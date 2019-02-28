@@ -1,5 +1,5 @@
 <?php
-$paths = array(
+$paths = [
   "_sForgotPwdTemplate"           => "/html/forgotpwd.tpl",
   "_sNewsletterOptInTemplate"     => "/html/newsletteroptin.tpl",
   "_sSuggestTemplate"             => "/html/suggest.tpl",
@@ -15,4 +15,4 @@ $paths = array(
   "_sOrderOwnerSubjectTemplate"   => "/html/order_owner_subj.tpl",
   "_sOwnerPricealarmTemplate"     => "/html/pricealarm_owner.tpl",
   "_sPricealamrCustomerTemplate"  => "/html/pricealarm_cust.tpl",
-  );
+];

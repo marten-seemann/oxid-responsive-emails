@@ -1,5 +1,22 @@
 {
-    "require": {
-        "tijsverkoyen/css-to-inline-styles": "^2.2"
+  "name": "seemannit/oxid-responsive-emails",
+  "description": "Responsive Emails for OXID eShop.",
+  "type": "oxideshop-module",
+  "keywords": ["oxid", "modules", "eShop", "emails", "responsive"],
+  "homepage": "https://www.oxid-responsive.com",
+  "license": [ "MIT" ],
+  "require": {
+    "php": ">=7.0",
+    "tijsverkoyen/css-to-inline-styles": "^2.2"
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "seemannit/responsiveemails"
     }
+  },
+  "autoload": {
+    "psr-4": {
+        "SeemannIT\\ResponsiveEmailsModule\\": "../../../source/modules/seemannit/responsiveemails"
+    }
+  }
 }

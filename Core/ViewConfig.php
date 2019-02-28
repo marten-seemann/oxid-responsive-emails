@@ -1,7 +1,9 @@
 <?php
-class oxviewconfig_respemail_ext extends oxviewconfig_respemail_ext_parent {
+namespace SeemannIT\ResponsiveEmailsModule\Core;
+
+class ViewConfig extends ViewConfig_parent {
   public function getResponsiveEmailConfig($name) {
-    return oxRegistry::getConfig()->getConfigParam($name);
+    return \OxidEsales\Eshop\Core\Registry::getConfig()->getConfigParam($name);
   }
 
   /**
@@ -24,7 +26,7 @@ class oxviewconfig_respemail_ext extends oxviewconfig_respemail_ext_parent {
   * @return string the path
   */
   public function getResponsiveEmailPath() {
-    return $this->getModulePath('responsive_email', 'email/');
+    return $this->getModulePath('seemannit/responsiveemails', 'email/');
   }
 
   /**
@@ -32,7 +34,7 @@ class oxviewconfig_respemail_ext extends oxviewconfig_respemail_ext_parent {
   * @return string the path
   */
   public function getResponsiveEmailModifiedPath() {
-    return $this->getModulePath('responsive_email').'modified/email/';
+    return $this->getModulePath('seemannit/responsiveemails').'modified/email/';
   }
 
   /**

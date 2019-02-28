@@ -1,5 +1,7 @@
 <?php
-class oxutilsview_respemail_ext extends oxutilsview_respemail_ext_parent {
+namespace SeemannIT\ResponsiveEmailsModule\Core;
+
+class UtilsView extends UtilsView_parent {
   /**
   * make sure that module block replacements can be applied to .tpl-files defined in this module
   *
@@ -9,7 +11,7 @@ class oxutilsview_respemail_ext extends oxutilsview_respemail_ext_parent {
   * same applies for the user modified files
   */
   public function getTemplateBlocks($sFile) {
-    $sModuleDir = $this->getConfig()->getModulesDir()."responsive_email/";
+    $sModuleDir = $this->getConfig()->getModulesDir()."seemannit/responsiveemails/";
     $sModuleDirModified = $sModuleDir."modified/";
 
     $sFile = $this->removeModuleDir($sFile, $sModuleDirModified); // must go first
