@@ -1,7 +1,7 @@
 <?php
 //config
-$save_dir = dirname(__FILE__)."/sql/single/";
-$ids = array(
+$save_dir = dirname(__FILE__)."/sql";
+$ids = [
   "oxadminorderemail",
   "oxadminordernpemail",
   "oxnewsletteremail",
@@ -12,31 +12,33 @@ $ids = array(
   "oxuserorderemail",
   "oxuserorderemailend",
   "oxupdatepassinfoemail",
-  );
+];
 // end config
 
-require(dirname(__FILE__)."/../../../bootstrap.php");
-$oDb = oxRegistry::get("oxDb");
-$db = $oDb->getDb();
+require(dirname(__FILE__)."/../../../../bootstrap.php");
+$db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
 
 /*
 * by using the HEX() values of the OXCONTENT here, we avoid
-* 1. problems with escaping \r and \n
+* problems with escaping \r and \n
 */
 
+$file = fopen("sql/install.sql", "w");
+
 foreach($ids as $id) {
-  $result = $db->getRow("SELECT HEX(OXCONTENT), HEX(OXCONTENT_1) FROM oxcontents WHERE OXLOADID='$id' AND OXSHOPID='oxbaseshop'");
+  $resultSet = $db->select("SELECT HEX(OXCONTENT), HEX(OXCONTENT_1) FROM oxcontents WHERE OXLOADID='$id' AND OXSHOPID=1");
+  $result = $resultSet->getFields();
 
   $content['de'] = $result[0];
   $content['en'] = $result[1];
 
   $query = "UPDATE `oxcontents` SET
-    `OXCONTENT`=UNHEX('".$oDb->escapeString($content['de'])."'),
-    `OXCONTENT_1`=UNHEX('".$oDb->escapeString($content['en'])."')
-     WHERE `OXLOADID`='$id' AND `OXSHOPID`='oxbaseshop';\n\n";
+    `OXCONTENT`=UNHEX('".$content['de']."'),
+    `OXCONTENT_1`=UNHEX('".$content['en']."')
+     WHERE `OXLOADID`='$id' AND `OXSHOPID`='1';\n\n";
 
-  $filename_sql = "{$id}.sql";
-  $filename_txt = "{$id}.txt";
-  echo "Writing file: **".$save_dir.$filename_sql."**\n";
-  file_put_contents($save_dir.$filename_sql, $query);
+  echo "Writing ".$id." to file: install.sql\n";
+  fwrite($file, $query);
 }
+
+fclose($file);
