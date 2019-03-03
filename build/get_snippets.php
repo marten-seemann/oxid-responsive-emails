@@ -49,9 +49,14 @@ $snippets = array(
   ),
 );
 
+$file = fopen("sql/snippets.sql", "w");
+
 foreach($snippets as $snippet) {
   $sql = "INSERT IGNORE INTO `oxcontents`
     (OXID, OXLOADID, OXSHOPID, OXSNIPPET, OXACTIVE, OXACTIVE_1, OXTITLE, OXTITLE_1, OXFOLDER, OXTIMESTAMP)
-    VALUES('".$snippet['id']."', '".$snippet['id']."', 'oxbaseshop', 1, 0, 0, UNHEX('".bin2hex($snippet['title'])."'), UNHEX('".bin2hex($snippet['title_1'])."'), 'CMSFOLDER_EMAILS', CURRENT_TIMESTAMP());";
-  echo $sql."\n";
+    VALUES('".$snippet['id']."', '".$snippet['id']."', 'oxbaseshop', 1, 0, 0, UNHEX('".bin2hex($snippet['title'])."'), UNHEX('".bin2hex($snippet['title_1'])."'), 'CMSFOLDER_EMAILS', CURRENT_TIMESTAMP());\n\n";
+  echo "Writing ".$snippet['id']." to snippets.sql\n";
+  fwrite($file, $sql);
 }
+
+fclose($file);

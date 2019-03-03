@@ -21,7 +21,7 @@ grunt
 mv build/sql .
 
 echo "Getting (empty) CMS snippets..."
-$PHP build/get_snippets.php > sql/snippets.sql
+$PHP build/get_snippets.php
 
 rm -rf email/src
 rm -rf README.md backend_email/ build/
