@@ -43,17 +43,4 @@
     <p>[{ oxmultilang ident="YOUR_TEAM" args=$shop->oxshops__oxname->value }]</p>
 [{/block}]
 
-[{block name="email_html_senddownloadlinks_ts"}]
-    [{if $oViewConf->showTs("ORDERCONFEMAIL") && $oViewConf->getTsId() }]
-        [{assign var="sTSRatingImg" value="https://www.trustedshops.com/bewertung/widget/img/bewerten_"|cat:$oViewConf->getActLanguageAbbr()|cat:".gif"}]
-        <h3>[{ oxmultilang ident="RATE_OUR_SHOP" }]</h3>
-
-        <p>
-            <a href="[{ $oViewConf->getTsRatingUrl() }]" target="_blank" title="[{ oxmultilang ident="TRUSTED_SHOPS_RATINGS" }]">
-                <img src="[{$sTSRatingImg}]" border="0" alt="[{ oxmultilang ident="WRITE_REVIEW_2" }]" align="middle">
-            </a>
-        </p>
-    [{/if}]
-[{/block}]
-
 [{include file=$oViewConf->getTemplatePath("inc/footer.tpl")}]
