@@ -56,7 +56,6 @@ class Email extends Email_parent {
       $css .= file_get_contents(realpath($this->getViewConfig()->getResponsiveEmailModifiedPath()."/css/styles.css"));
     }
 
-    require_once(dirname(__FILE__)."/../vendor/autoload.php");
     $cssToInlineStyles = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles();
     $html = $cssToInlineStyles->convert($body, $css);
     // echo $html;
