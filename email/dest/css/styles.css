@@ -1,0 +1,313 @@
+/* -------------------------------------
+    GLOBAL
+------------------------------------- */
+* {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.6em;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 600px;
+  width: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  width: 100% !important;
+}
+/* -------------------------------------
+    ELEMENTS
+------------------------------------- */
+a {
+  color: #348eda;
+}
+.btn-primary {
+  margin-bottom: 10px;
+  width: auto !important;
+}
+.btn-primary td {
+  background-color: #348eda;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: top;
+}
+.btn-primary td a {
+  background-color: #348eda;
+  border: solid 1px #348eda;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  border-width: 10px 20px;
+  display: inline-block;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 2;
+  text-decoration: none;
+}
+.last {
+  margin-bottom: 0;
+}
+.first {
+  margin-top: 0;
+}
+.padding {
+  padding: 10px 0;
+}
+/* -------------------------------------
+    BODY
+------------------------------------- */
+table.body-wrap {
+  padding: 20px;
+  width: 100%;
+}
+table.body-wrap .container {
+  border: 1px solid #f0f0f0;
+}
+/* -------------------------------------
+    FOOTER
+------------------------------------- */
+table.footer-wrap {
+  clear: both !important;
+  width: 100%;
+}
+table.footer-wrap a {
+  color: #999999;
+}
+/* -------------------------------------
+    TYPOGRAPHY
+------------------------------------- */
+h1,
+h2,
+h3 {
+  color: #111111;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 200;
+  line-height: 1.2em;
+  margin: 40px 0 10px;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 22px;
+}
+p,
+ul,
+ol {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+ul li,
+ol li {
+  margin-left: 5px;
+  list-style-position: inside;
+}
+/* ---------------------------------------------------
+    RESPONSIVENESS
+------------------------------------------------------ */
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+  clear: both !important;
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+/* Set the padding on the td rather than the div for Outlook compatibility */
+.body-wrap .container {
+  padding: 20px;
+}
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+  width: 100%;
+}
+*,
+p,
+ol,
+ul,
+.btn-primary td {
+  font-size: 15px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+h1 {
+  font-size: 38.25px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 30px;
+}
+body {
+  width: 100% !important;
+  min-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.btn-primary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btn-primary td,
+.btn-secondary td {
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+table.body-wrap,
+table.footer-wrap {
+  width: 100% !important;
+  min-width: 100% !important;
+  padding: 0;
+}
+table.body-wrap .container,
+table.footer-wrap .container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+table.body-wrap .container {
+  border: 0;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+table.footer-wrap .container {
+  border: 0;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+addr {
+  font-style: inherit;
+}
+.footer-wrap {
+  background-color: #F6F6F6;
+}
+.footer-wrap * {
+  font-size: 13px;
+  color: #666666;
+}
+.order-nr {
+  margin-top: 5px;
+  width: 100% !important;
+  text-align: right;
+}
+table.suggest th,
+table.suggest td {
+  padding: 1px;
+  white-space: nowrap;
+}
+#suggest-product img {
+  border: 0;
+  max-width: 250px;
+  max-height: 250px;
+}
+table.products {
+  width: 100%;
+}
+table.products th,
+table.products td {
+  padding: 2px;
+  border-bottom: 1px solid #DDDDDD;
+}
+table.products ul {
+  margin-bottom: 0;
+}
+table.products .picture-col {
+  width: 33%;
+  text-align: center;
+  vertical-align: middle;
+}
+table.products .picture-col img {
+  max-height: 120px;
+  width: auto !important;
+  max-width: 100%;
+}
+table.products .product-col {
+  padding-left: 3px;
+  vertical-align: top;
+}
+table.products .product-details {
+  color: #444;
+}
+table.products .product-details,
+table.products .product-details * {
+  font-size: 13px;
+}
+table.products .product-artnum {
+  margin-bottom: 10px;
+}
+table.products .product-gift-wrapping {
+  margin-top: 10px;
+}
+table.products .review-link {
+  margin-top: 5px;
+}
+table.products .greeting-card {
+  margin-left: 8px;
+}
+table.order-summary-wrapper {
+  width: 100% !important;
+}
+table.order-summary {
+  width: 270px;
+  float: right;
+}
+table.order-summary th,
+table.order-summary td {
+  padding: 2px;
+}
+table.order-summary th {
+  font-weight: normal;
+  text-align: right;
+  padding-right: 8px;
+}
+table.vouchers-wrapper {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: auto;
+}
+table.vouchers tr.heading th,
+table.vouchers tr.heading td {
+  border-bottom: 1px solid #DDDDDD;
+}
+table.vouchers th,
+table.vouchers td {
+  padding: 2px;
+}
+table.vouchers .voucher-col {
+  padding-right: 10px;
+}
+#grand-total th,
+#grand-total td {
+  border-top: 1px solid #DDDDDD;
+}
+#order-address th,
+#order-address td {
+  vertical-align: top;
+}
+#order-address .order-address {
+  padding-right: 30px;
+}
+.price {
+  width: 25%;
+  text-align: right;
+  white-space: nowrap;
+}
+.warning {
+  color: #d9534f;
+}
